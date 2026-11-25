@@ -1,0 +1,86 @@
+{
+  "historical": {
+    "n": 100,
+    "left": 51,
+    "right": 52,
+    "corrected": 15,
+    "regressed": 14
+  },
+  "historical_new_nodes": 1,
+  "historical_signals": {
+    "opposing_candidate_boxes": 1
+  },
+  "field_mismatches": {
+    "maira2_grounded_report": 20,
+    "xray_phrase_grounding": 20
+  },
+  "injections": {
+    "task_match": 25,
+    "finding_match": 8,
+    "view_match": 7,
+    "sequence_changed": 13,
+    "calls_or_args_changed": 14
+  },
+  "injections_full_match": 2,
+  "injected_scores": {
+    "n": 27,
+    "left": 12,
+    "right": 12,
+    "corrected": 4,
+    "regressed": 4
+  },
+  "exact_first_request": {
+    "n": 5,
+    "left": 2,
+    "right": 3,
+    "corrected": 1,
+    "regressed": 0
+  },
+  "exact_first_responses_changed": 4,
+  "prior_online_B1": {
+    "n": 100,
+    "left": 46,
+    "right": 51,
+    "corrected": 18,
+    "regressed": 13
+  },
+  "fixed_candidates": {
+    "frontal_tool_on_ineligible_view": 21,
+    "alternative_after_ineligible_tool": 13,
+    "opposing_candidate_boxes": 1
+  },
+  "fixed_accepted": {
+    "alternative_after_ineligible_tool": 13,
+    "frontal_tool_on_ineligible_view": 9,
+    "opposing_candidate_boxes": 1
+  },
+  "model_reviewed": 22,
+  "graph_created": 11,
+  "graph_merged": 12,
+  "graph_first_write": 16,
+  "graph_nodes": {
+    "success": 6,
+    "failure": 5
+  },
+  "graph_edges": 4,
+  "would_inject": 44,
+  "write_only_would_inject": 74,
+  "crop": {
+    "C2": {
+      "n": 12,
+      "cropped": 7,
+      "fallback": {
+        "frontal_cxr_required": 5
+      },
+      "seconds": 0.2511279000900686
+    },
+    "C3": {
+      "n": 12,
+      "cropped": 7,
+      "fallback": {
+        "frontal_cxr_required": 5
+      },
+      "seconds": 17.875489799538627
+    }
+  }
+}
