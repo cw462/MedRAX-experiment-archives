@@ -1,0 +1,1824 @@
+{
+  "cohort": "first18",
+  "question_id": "chexbench_openi_0155",
+  "image": "images/openi/images/CXR2271_IM-0860-1001.png",
+  "view": "frontal",
+  "phrase": "small pleural effusion",
+  "xraydar_probability": 0.341520220041275,
+  "biovil": {
+    "question_id": "chexbench_openi_0155",
+    "view": "frontal",
+    "phrase": "small pleural effusion",
+    "path": "chexbench_openi_0155.png",
+    "size": [
+      420,
+      512
+    ],
+    "p05": -0.08629224747419358,
+    "p95": 0.18925082385540004,
+    "fraction_scored": 0.6263439360119047
+  },
+  "imt": {
+    "question_id": "chexbench_openi_0155",
+    "prompt": "give the accurate bbox of pleural effusion",
+    "boxes": [
+      [
+        48,
+        260,
+        109,
+        325
+      ]
+    ],
+    "raw_bins": "<bin_94> <bin_619> <bin_213> <bin_774>",
+    "raw_text": "",
+    "size": [
+      512,
+      420
+    ]
+  },
+  "runs": [
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 492,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks involving lateralized findings have benefited from first establishing image orientation through explicit markers before interpreting the abnormality's side. One approach that worked was systematically comparing symmetric regions after confirming orientation, which helped localize findings reliably.",
+        "utc": "2026-11-27T11:23:13.231835+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to localize any pleural effusion and confirm side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:13.236799+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"BLM LT\" in the upper right corner, which indicates the patient's left side is on that side of the image (standard radiological convention where the viewer's right is the patient's left).\n2.  **Findings**:\n    *   There is a linear opacity in the right mid-lung field, identified by the MAIRA-2 report as platelike atelectasis.\n    *   Looking at the costophrenic angles (the bottom corners of the lung fields), the angle on the patient's left side (viewer's right) appears sharp and clear.\n    *   The costophrenic angle on the patient's right side (viewer's left) shows blunting and increased haziness/opacity at the base. This finding is characteristic of a small pleural effusion.\n3.  **Conclusion**: The abnormality consistent with fluid accumulation (blunting of the costophrenic angle) is located on the right side.\n\nTherefore, the finding is a small right pleural effusion.\n\n{\"answer\":\"B. small right pleural effusion\",\"reason\":\"The chest X-ray demonstrates blunting of the right costophrenic angle and basal haziness, indicative of a small right pleural effusion, while the left costophrenic angle remains sharp.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:26.920770+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal haziness consistent with a small right pleural effusion, while the left side appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:29.512413+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:23:26.916482+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is at the upper limits of normal.",
+                "boxes": []
+              },
+              {
+                "finding": "Aorta is tortuous and partially calcified.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.235,
+                      0.605,
+                      0.645
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.23333333333333334,
+                      0.5859375,
+                      0.6428571428571429
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      98.0,
+                      300.0,
+                      270.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.125,
+                      0.335,
+                      0.375,
+                      0.565
+                    ],
+                    "original_normalized": [
+                      0.19140625,
+                      0.3333333333333333,
+                      0.396484375,
+                      0.5642857142857143
+                    ],
+                    "original_pixels": [
+                      98.0,
+                      140.0,
+                      203.0,
+                      237.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is no evidence of old or new tb.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is at the upper limits of normal. Aorta is tortuous and partially calcified. There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis. There is no evidence of old or new tb.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 6,
+              "annotation_id": "V0284",
+              "recorded_asset_id": "bfea899166175c43af4d7292dae78993ece33808e34626d51b41e0f48dcab5e9",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 87,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 7.5172122195363045,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and basal haziness consistent with a small right pleural effusion, while the left side appears clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:23:30.238855+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:446e36e0, text:d7c21b2a, text:84320528, text:df0615cd, text:c9e323b9",
+        "prediction_saved_at": "2026-11-27T11:23:30.238855+00:00",
+        "feedback_released_at": "2026-11-27T11:23:30.240593+00:00",
+        "utc": "2026-11-27T11:23:33.010858+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 448,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first confirming image orientation and laterality conventions before evaluating side-specific findings. One approach that worked involved independently validating the finding type and its anatomical side before committing to an answer.",
+        "utc": "2026-11-27T11:22:46.699387+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a label \"BLM LT\" in the upper right corner, which typically indicates the patient's left side is on that side of the image (standard radiological convention where the viewer looks at the patient from the feet, so the patient's left is on the viewer's right).\n2.  **Findings**: There is blunting of the costophrenic angle and increased opacity in the lower lung zone on the viewer's right side (patient's left). This appearance is characteristic of a pleural effusion.\n3.  **Side Confirmation**: Since the finding is on the viewer's right, it corresponds to the patient's left side. The BioViL-T overlay also highlights this area with high similarity scores for \"small pleural effusion\".\n\nTherefore, the finding is a small left pleural effusion.\n\n{\"answer\":\"A. small left pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and basal opacity on the patient's left side (viewer's right), consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:46.704348+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"A\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and increased opacity in the left lower lung zone, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:48.275632+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "A",
+        "reason": "The chest X-ray shows blunting of the left costophrenic angle and increased opacity in the left lower lung zone, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:22:49.338538+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:22:49.338538+00:00",
+        "feedback_released_at": "2026-11-27T11:22:49.340059+00:00",
+        "utc": "2026-11-27T11:22:49.341950+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "joint",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 489,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation conventions and locating anatomical markers before interpreting lateralized findings. One approach that worked involved systematically comparing affected versus contralateral regions to confirm laterality and rule out ambiguous findings.",
+        "utc": "2026-11-27T11:21:16.553062+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}},{\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small pleural effusion\"}}],\"reason\":\"Obtain a grounded radiology report and phrase localization to verify the presence and laterality of any pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:16.558068+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image contains a marker \"BLM LT\" in the upper right corner, which typically indicates the patient's left side is on that side of the image (standard radiological convention where the viewer's right is the patient's left). However, looking at the anatomy, the heart shadow is predominantly on the left side of the image (patient's right) and the gastric bubble is on the right side of the image (patient's left). Wait, standard convention is Viewer's Left = Patient's Right. Let's re-examine.\n    *   In a standard PA view, the heart apex points to the patient's left. Here, the cardiac silhouette is shifted towards the viewer's left. This would correspond to the patient's right side if it were a mirror image, but usually, the heart is on the left. Let's look at the diaphragm. The hemidiaphragm on the viewer's left is higher than the one on the viewer's right. The right hemidiaphragm is normally higher due to the liver. Therefore, the viewer's left corresponds to the patient's right side. The label \"BLM LT\" might be an artifact or refer to something else, but anatomical landmarks are more reliable. The viewer's left is the patient's right.\n2.  **Findings**:\n    *   There is blunting of the costophrenic angle on the viewer's left side (patient's right). This is a classic sign of a pleural effusion.\n    *   The left costophrenic angle (viewer's right) appears sharp and clear.\n    *   The MAIRA-2 report identified \"platelike area of subsegmental atelectasis\" in the right midlung field, which aligns with the viewer's left side.\n    *   The `xray_phrase_grounding` tool localized \"small pleural effusion\" to the region of the right costophrenic angle (viewer's left).\n3.  **Conclusion**: The finding is a small pleural effusion on the right side.\n\nTherefore, the correct option is B.\n\n{\"answer\":\"B. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (viewer's left), consistent with a small right pleural effusion, while the left side is clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:17.430606+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (viewer's left), which is consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:28.556090+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:21:47.888078+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is at the upper limits of normal.",
+                "boxes": []
+              },
+              {
+                "finding": "Aorta is tortuous and partially calcified.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.235,
+                      0.605,
+                      0.645
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.23333333333333334,
+                      0.5859375,
+                      0.6428571428571429
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      98.0,
+                      300.0,
+                      270.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.125,
+                      0.335,
+                      0.375,
+                      0.565
+                    ],
+                    "original_normalized": [
+                      0.19140625,
+                      0.3333333333333333,
+                      0.396484375,
+                      0.5642857142857143
+                    ],
+                    "original_pixels": [
+                      98.0,
+                      140.0,
+                      203.0,
+                      237.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is no evidence of old or new tb.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is at the upper limits of normal. Aorta is tortuous and partially calcified. There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis. There is no evidence of old or new tb.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 6,
+              "annotation_id": "V0284",
+              "recorded_asset_id": "bfea899166175c43af4d7292dae78993ece33808e34626d51b41e0f48dcab5e9",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 87,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 30.04805856011808,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:22:17.423368+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.035,
+                        0.595,
+                        0.245,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.1171875,
+                        0.5928571428571429,
+                        0.2890625,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_6069beb0.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 29.5314078964293,
+          "derived_images": [
+            "grounding_6069beb0.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle (viewer's left), which is consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:22:29.482073+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:d7a34808, text:403c6740, text:6f25995b, text:a48bc6e8, text:975d6a01",
+        "prediction_saved_at": "2026-11-27T11:22:29.482073+00:00",
+        "feedback_released_at": "2026-11-27T11:22:29.484104+00:00",
+        "utc": "2026-11-27T11:22:32.617355+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "xraydar",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 438,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation markers before assigning laterality to findings. One approach that worked involved combining localized visual evidence with explicit anatomical reasoning to verify which side a finding appears on.",
+        "utc": "2026-11-27T11:23:24.165949+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To obtain a grounded radiology report and localized evidence for pleural effusion to determine laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:24.170615+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"BLM LT\" in the upper right corner, which typically indicates the patient's left side is on that side of the image (standard radiological convention where the viewer looks at the patient from the front, so the patient's left is on the viewer's right). However, looking closely at the anatomy and standard labeling, \"LT\" usually marks the Left side. Let's verify with anatomical landmarks. The gastric air bubble is visible under the left hemidiaphragm (viewer's right). The heart shadow is more prominent on the viewer's left. Wait, standard CXR orientation: Viewer's Left = Patient's Right. Viewer's Right = Patient's Left.\n    *   The marker \"BLM LT\" is on the viewer's right side. This confirms the **Patient's Left** is on the viewer's right.\n    *   Therefore, the **Patient's Right** is on the viewer's left.\n\n2.  **Findings Analysis**:\n    *   **Right Hemithorax (Viewer's Left)**: There is blunting of the right costophrenic angle. The diaphragmatic contour is obscured by increased opacity in the lower lung zone. This appearance is consistent with a small pleural effusion. The `xray_phrase_grounding` tool also placed a box in this region (patient's right) for \"pleural effusion\".\n    *   **Left Hemithorax (Viewer's Right)**: The left costophrenic angle appears sharp and clear. The lung fields are relatively clear compared to the right.\n\n3.  **Conclusion**: The finding of blunted costophrenic angle and basal opacity is present on the patient's right side. Thus, it is a small right pleural effusion.\n\n{\"answer\":\"small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion, while the left side appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:47.483103+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:52.391373+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:23:42.769663+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is at the upper limits of normal.",
+                "boxes": []
+              },
+              {
+                "finding": "Aorta is tortuous and partially calcified.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.235,
+                      0.605,
+                      0.645
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.23333333333333334,
+                      0.5859375,
+                      0.6428571428571429
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      98.0,
+                      300.0,
+                      270.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.125,
+                      0.335,
+                      0.375,
+                      0.565
+                    ],
+                    "original_normalized": [
+                      0.19140625,
+                      0.3333333333333333,
+                      0.396484375,
+                      0.5642857142857143
+                    ],
+                    "original_pixels": [
+                      98.0,
+                      140.0,
+                      203.0,
+                      237.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is no evidence of old or new tb.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is at the upper limits of normal. Aorta is tortuous and partially calcified. There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis. There is no evidence of old or new tb.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 6,
+              "annotation_id": "V0284",
+              "recorded_asset_id": "bfea899166175c43af4d7292dae78993ece33808e34626d51b41e0f48dcab5e9",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 87,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 7.40329204685986,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:23:47.476067+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.035,
+                        0.585,
+                        0.245,
+                        0.785
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.1171875,
+                        0.5833333333333334,
+                        0.2890625,
+                        0.7833333333333333
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_ae3f6cf8.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 4.7008597906678915,
+          "derived_images": [
+            "grounding_ae3f6cf8.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:23:53.140239+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:3d646982, text:24dd8f51, text:0b23f6a8, text:591eb779, text:349ae064",
+        "prediction_saved_at": "2026-11-27T11:23:53.140239+00:00",
+        "feedback_released_at": "2026-11-27T11:23:53.142252+00:00",
+        "utc": "2026-11-27T11:23:56.147467+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 502,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing the same anatomical landmark on both sides to identify which one is abnormal when options differ only by laterality. One approach that worked involved confirming the contralateral side was normal before mapping the observed side to the corresponding answer option.",
+        "utc": "2026-11-27T11:20:54.415301+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right costophrenic angle is blunted with a small meniscus, while the left costophrenic angle appears sharp, indicating a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:54.418718+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right costophrenic angle is blunted with a small meniscus, while the left costophrenic angle appears sharp, indicating a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:55.543247+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:61960b1e, text:8e22d2a4, text:c2fc7c5e, text:84cc43d1, text:1a7f4d39",
+        "prediction_saved_at": "2026-11-27T11:20:55.543247+00:00",
+        "feedback_released_at": "2026-11-27T11:20:55.544326+00:00",
+        "utc": "2026-11-27T11:20:58.565546+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 478,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing paired anatomical structures to detect asymmetry as a discriminator between competing findings. One approach that worked before involved anchoring observations to named landmarks using standard terminology when evaluating symmetric regions.",
+        "utc": "2026-11-27T11:21:05.166504+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right costophrenic angle is blunted with a small meniscus, while the left costophrenic angle remains sharp, indicating a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:05.171417+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right costophrenic angle is blunted with a small meniscus, while the left costophrenic angle remains sharp, indicating a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:05.866321+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:4a5265fc, text:9350191f, text:9c31b6c9, text:8c9d189f, text:3706de77",
+        "prediction_saved_at": "2026-11-27T11:21:05.866321+00:00",
+        "feedback_released_at": "2026-11-27T11:21:05.870321+00:00",
+        "utc": "2026-11-27T11:21:08.712091+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "joint",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 451,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing the anatomical side of the abnormality before matching it to the corresponding option. One approach that worked involved localizing the visual evidence to a hemithorax and then selecting the laterality-consistent label.",
+        "utc": "2026-11-27T11:21:00.710563+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:00.716927+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:02.485395+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:15c920d3, text:70d6ce71, text:9fba99d7, text:ac16cfed, text:936f1489",
+        "prediction_saved_at": "2026-11-27T11:21:02.485395+00:00",
+        "feedback_released_at": "2026-11-27T11:21:02.486259+00:00",
+        "utc": "2026-11-27T11:21:05.495861+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "xraydar",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 451,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing anatomical orientation to distinguish the patient's left from right before attributing a lateralized finding. One approach that worked involved matching visual evidence of the abnormality to the correctly oriented side.",
+        "utc": "2026-11-27T11:21:02.438101+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:02.443885+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:03.271779+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8b5a5546, text:822bfbe6, text:0bc6594c, text:c8a7deef, text:d94abc57",
+        "prediction_saved_at": "2026-11-27T11:21:03.271779+00:00",
+        "feedback_released_at": "2026-11-27T11:21:03.272885+00:00",
+        "utc": "2026-11-27T11:21:06.184996+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 64,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 471,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation via anatomical landmarks before evaluating lateralized findings. One approach that worked involved comparing bilateral regions systematically to detect subtle asymmetric changes when distinguishing between left and right options.",
+        "utc": "2026-11-27T09:08:10.322850+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To obtain a grounded report and localized evidence for pleural effusion to determine laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:08:10.327191+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"BLM LT\" in the upper right corner, which indicates that the patient's left side is on the right side of the image (standard radiological convention). Therefore, the left side of the image corresponds to the patient's right side.\n2.  **Findings**: There is blunting of the costophrenic angle and increased opacity at the lung base on the left side of the image (patient's right). This appearance is characteristic of a pleural effusion. The contralateral side (patient's left) appears clearer with a sharp costophrenic angle.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"pleural effusion\" to the region corresponding to the patient's right hemithorax (left side of the image).\n\nTherefore, the finding is a small right pleural effusion.\n\n{\"answer\":\"B. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity consistent with a small right pleural effusion, confirmed by localization tools.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:08:23.591974+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:08:32.246844+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:08:22.017458+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is at the upper limits of normal.",
+                "boxes": []
+              },
+              {
+                "finding": "Aorta is tortuous and partially calcified.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.235,
+                      0.605,
+                      0.645
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.23333333333333334,
+                      0.5859375,
+                      0.6428571428571429
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      98.0,
+                      300.0,
+                      270.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.125,
+                      0.335,
+                      0.375,
+                      0.565
+                    ],
+                    "original_normalized": [
+                      0.19140625,
+                      0.3333333333333333,
+                      0.396484375,
+                      0.5642857142857143
+                    ],
+                    "original_pixels": [
+                      98.0,
+                      140.0,
+                      203.0,
+                      237.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is no evidence of old or new tb.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is at the upper limits of normal. Aorta is tortuous and partially calcified. There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis. There is no evidence of old or new tb.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 6,
+              "annotation_id": "V0284",
+              "recorded_asset_id": "bfea899166175c43af4d7292dae78993ece33808e34626d51b41e0f48dcab5e9",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 87,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.565068695694208,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:08:23.586067+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.035,
+                        0.585,
+                        0.245,
+                        0.785
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.1171875,
+                        0.5833333333333334,
+                        0.2890625,
+                        0.7833333333333333
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_e7a80ba7.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.5644882209599018,
+          "derived_images": [
+            "grounding_e7a80ba7.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and basal opacity consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:08:33.235791+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:809efd44, text:b94ceebf, text:51255dcb, text:e0bf470d, text:e8082125",
+        "prediction_saved_at": "2026-11-27T09:08:33.235791+00:00",
+        "feedback_released_at": "2026-11-27T09:08:33.237936+00:00",
+        "utc": "2026-11-27T09:08:36.961198+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 64,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 459,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation using laterality markers before comparing bilateral structures for asymmetric findings. One approach that worked involved mapping image coordinates to patient anatomy prior to drawing diagnostic conclusions.",
+        "utc": "2026-11-27T09:13:19.221274+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"small pleural effusion\"}}],\"reason\":\"To verify the presence and laterality of a small pleural effusion using phrase localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:13:19.226132+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Laterality Identification**: The image contains a marker \"BLM LT\" in the upper right corner, which indicates the patient's left side is on the right side of the image (standard radiological convention). Therefore, the left side of the image corresponds to the patient's right side.\n2.  **Visual Findings**: There is blunting and haziness of the costophrenic angle on the left side of the image (patient's right). This finding is consistent with a small pleural effusion. The corresponding area on the patient's left side (right side of the image) appears clearer.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"small pleural effusion\" to the region of the patient's right hemithorax (left side of the image), confirming the visual assessment.\n\nTherefore, the finding is a small right pleural effusion.\n\n{\"answer\":\"B. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (viewer's left), which corresponds to a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:13:22.195561+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (viewer's left), which corresponds to a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:13:24.725584+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {
+            "phrase": "small pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:13:22.188030+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.035,
+                        0.595,
+                        0.245,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.1171875,
+                        0.5928571428571429,
+                        0.2890625,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_44f0bfcc.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.9614431764930487,
+          "derived_images": [
+            "grounding_44f0bfcc.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle (viewer's left), which corresponds to a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:13:25.866088+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:3897c86e, text:19d2f5fb, text:964fcab0, text:75e80a49, text:13829c40",
+        "prediction_saved_at": "2026-11-27T09:13:25.866088+00:00",
+        "feedback_released_at": "2026-11-27T09:13:25.867390+00:00",
+        "utc": "2026-11-27T09:13:29.145004+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 64,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 498,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing bilateral structures for asymmetry in opacity or volume before mapping observations to the correct anatomical side. One approach that worked involved first establishing laterality using anatomical landmarks, then characterizing the type of abnormality present.",
+        "utc": "2026-11-27T05:36:48.844553+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:36:48.849107+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T05:36:50.297611+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:337acdd1, text:e732a56e, text:51b4ae76, text:88a8d7b4, text:68ed900d",
+        "prediction_saved_at": "2026-11-27T05:36:50.297611+00:00",
+        "feedback_released_at": "2026-11-27T05:36:50.299913+00:00",
+        "utc": "2026-11-27T05:36:54.213599+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 64,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 447,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing the image's laterality convention before attributing findings to a side. One approach that worked was mapping observed features to anatomical sides using standard radiological orientation prior to comparing options.",
+        "utc": "2026-11-27T09:06:47.200577+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:06:47.205437+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:06:52.965943+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:6c892704, text:b7a850d7, text:59117ba7, text:57bcb114, text:f994781f",
+        "prediction_saved_at": "2026-11-27T09:06:52.965943+00:00",
+        "feedback_released_at": "2026-11-27T09:06:52.967163+00:00",
+        "utc": "2026-11-27T09:06:56.614533+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 33,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 468,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via anatomical landmarks before comparing bilateral structures for asymmetry. One approach that worked previously involved systematically contrasting corresponding regions on each side to identify lateralized findings.",
+        "utc": "2026-11-27T09:51:48.805879+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To identify the presence and laterality of a pleural effusion by obtaining a grounded report and specific phrase localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:51:48.810125+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image is a frontal chest X-ray. The label \"BLM LT\" indicates the patient's left side is on the right side of the image (standard radiological convention). Therefore, the left side of the image corresponds to the patient's right side.\n2.  **Visual Findings**: There is blunting and obscuring of the right costophrenic angle (the bottom outer corner of the lung field on the left side of the image). This appearance is characteristic of fluid accumulation in the pleural space. The left costophrenic angle appears sharp and clear.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"pleural effusion\" with a bounding box specifically over the right lower lung zone/costophrenic angle area. The `maira2_grounded_report` identified atelectasis but did not explicitly report effusion, though visual inspection confirms the opacity consistent with a small effusion on the right.\n\nComparing the options:\n*   A. small left pleural effusion: Incorrect, the left side is clear.\n*   B. small right pleural effusion: Correct, there is evidence of fluid on the patient's right side.\n\n{\"answer\":\"small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle, indicating a small amount of fluid in the right pleural space.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:52:01.301856+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:52:08.658456+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:51:55.277065+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is at the upper limits of normal.",
+                "boxes": []
+              },
+              {
+                "finding": "Aorta is tortuous and partially calcified.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.235,
+                      0.605,
+                      0.645
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.23333333333333334,
+                      0.5859375,
+                      0.6428571428571429
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      98.0,
+                      300.0,
+                      270.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.125,
+                      0.335,
+                      0.375,
+                      0.565
+                    ],
+                    "original_normalized": [
+                      0.19140625,
+                      0.3333333333333333,
+                      0.396484375,
+                      0.5642857142857143
+                    ],
+                    "original_pixels": [
+                      98.0,
+                      140.0,
+                      203.0,
+                      237.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "There is no evidence of old or new tb.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is at the upper limits of normal. Aorta is tortuous and partially calcified. There is a linear area of increased radiodensity in the right midlung field consistent with a platelike area of subsegmental atelectasis. There is no evidence of old or new tb.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 6,
+              "annotation_id": "V0284",
+              "recorded_asset_id": "bfea899166175c43af4d7292dae78993ece33808e34626d51b41e0f48dcab5e9",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 87,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.2472703121602535,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:52:01.295227+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.035,
+                        0.585,
+                        0.245,
+                        0.785
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.1171875,
+                        0.5833333333333334,
+                        0.2890625,
+                        0.7833333333333333
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_65def78d.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 6.01429096236825,
+          "derived_images": [
+            "grounding_65def78d.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:52:09.536225+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:5fcbb077, text:4e14db21, text:f17d0729, text:f3f52eff, text:f96d77d0",
+        "prediction_saved_at": "2026-11-27T09:52:09.536225+00:00",
+        "feedback_released_at": "2026-11-27T09:52:09.538939+00:00",
+        "utc": "2026-11-27T09:52:13.199745+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "box",
+      "ordinal": 33,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 503,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from establishing image orientation via side markers or anatomical landmarks before resolving laterality between symmetric options. One approach that worked involved grounding candidate findings against the image and explicitly applying radiological convention to disambiguate left versus right.",
+        "utc": "2026-11-27T10:10:36.755847+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"small right pleural effusion\"}},{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"small left pleural effusion\"}}],\"reason\":\"To localize the specific findings mentioned in the options and determine laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:10:36.759835+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"BLM LT\" in the upper right corner, which indicates that the left side of the patient is on the right side of the image (standard radiological convention). Therefore, the left side of the image corresponds to the patient's right side.\n2.  **Visual Findings**: There is blunting of the costophrenic angle and increased opacity at the lung base on the left side of the image (patient's right). This appearance is characteristic of a pleural effusion. The left lung base (right side of the image) appears clearer with a sharp costophrenic angle.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"small right pleural effusion\" to the area corresponding to the patient's right hemithorax (left side of the image), while the localization for \"small left pleural effusion\" was placed on the opposite side where no significant pathology is evident.\n\nTherefore, the finding present is a small right pleural effusion.\n\n{\"answer\":\"B. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (visible on the left side of the image), consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:10:51.569919+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle (visible on the left side of the image), consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:10:56.058644+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {
+            "phrase": "small right pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T10:10:48.268984+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small right pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.055,
+                        0.555,
+                        0.325,
+                        0.775
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.134765625,
+                        0.5547619047619048,
+                        0.35546875,
+                        0.7738095238095238
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_f5ae1ebc.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 2.6890161521732807,
+          "derived_images": [
+            "grounding_f5ae1ebc.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T10:10:51.560067+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.645,
+                        0.575,
+                        0.885,
+                        0.745
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.6171875,
+                        0.5738095238095238,
+                        0.814453125,
+                        0.7428571428571429
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_4c06e1ab.png"
+            },
+            {
+              "image_path": "CXR2271_IM-0860-1001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 3.287932937964797,
+          "derived_images": [
+            "grounding_4c06e1ab.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle (visible on the left side of the image), consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:10:56.983170+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8af5cfad, text:6ab7f8ac, text:7ec75fa2, text:5de3f08e, text:0a106386",
+        "prediction_saved_at": "2026-11-27T10:10:56.983170+00:00",
+        "feedback_released_at": "2026-11-27T10:10:56.984927+00:00",
+        "utc": "2026-11-27T10:10:59.875681+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 33,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 428,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing corresponding regions on both sides to detect asymmetry in opacity or volume. One approach that worked before involved anchoring the answer to a specific visual feature rather than guessing.",
+        "utc": "2026-11-27T09:43:36.096963+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:43:36.100877+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right costophrenic angle is blunted with a small meniscus, consistent with a small right pleural effusion, while the left costophrenic angle appears sharp.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:43:36.981115+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:7d48dd5a, text:4b68949b, text:96f4ef8e, text:98476d70, text:4bfd2e92",
+        "prediction_saved_at": "2026-11-27T09:43:36.981115+00:00",
+        "feedback_released_at": "2026-11-27T09:43:36.982586+00:00",
+        "utc": "2026-11-27T09:43:40.712569+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "box",
+      "ordinal": 33,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 460,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing bilateral symmetric structures to spot unilateral abnormalities. One approach that worked involved first determining the side of the abnormality by comparing left and right hemithoraces before matching features to options.",
+        "utc": "2026-11-27T10:03:43.430757+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:03:43.435237+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are at the right costophrenic angle, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:03:44.625748+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8123af89, text:7139ce40, text:65ab8222, text:00ad17eb, text:02248dd9",
+        "prediction_saved_at": "2026-11-27T10:03:44.625748+00:00",
+        "feedback_released_at": "2026-11-27T10:03:44.626777+00:00",
+        "utc": "2026-11-27T10:03:48.317537+00:00"
+      }
+    }
+  ],
+  "question": "Which finding is in this chest X-ray?",
+  "options": {
+    "A": "small left pleural effusion",
+    "B": "small right pleural effusion"
+  },
+  "reference": "B"
+}

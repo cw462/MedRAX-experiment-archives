@@ -1,0 +1,1374 @@
+{
+  "cohort": "first18",
+  "question_id": "chexbench_openi_0243",
+  "image": "images/openi/images/CXR3519_IM-1717-1001.png",
+  "view": "frontal",
+  "phrase": "large pleural effusion",
+  "xraydar_probability": 0.9746301174163818,
+  "biovil": {
+    "question_id": "chexbench_openi_0243",
+    "view": "frontal",
+    "phrase": "large pleural effusion",
+    "path": "chexbench_openi_0243.png",
+    "size": [
+      491,
+      512
+    ],
+    "p05": -0.10123242437839508,
+    "p95": 0.5650578141212463,
+    "fraction_scored": 0.7320877354887984
+  },
+  "imt": {
+    "question_id": "chexbench_openi_0243",
+    "prompt": "give the accurate bbox of pleural effusion",
+    "boxes": [
+      [
+        253,
+        206,
+        453,
+        393
+      ]
+    ],
+    "raw_bins": "<bin_494> <bin_420> <bin_883> <bin_800>",
+    "raw_text": "",
+    "size": [
+      512,
+      491
+    ]
+  },
+  "runs": [
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 15,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 476,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via explicit markers before comparing symmetric anatomical regions to localize abnormalities. One approach that worked was verifying radiological convention early, since side-confusion was the main failure mode in prior cases.",
+        "utc": "2026-11-27T11:25:06.204376+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"large pleural effusion\"}}], \"reason\":\"Obtain a grounded radiology report and localize the 'large pleural effusion' phrase to verify its presence and side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:06.209168+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image displays a standard frontal chest radiograph with an \"L\" marker indicating the patient's left side is on the right side of the image (viewer's perspective).\n2.  **Findings**: There is a significant, dense opacity occupying the lower and middle zones of the lung field on the viewer's right (patient's left). This opacity obscures the left hemidiaphragm and the left heart border, which are classic signs of a pleural effusion in that location. The opacity appears to extend up towards the apex, suggesting a large volume. In contrast, the right lung field (viewer's left) is relatively clear.\n3.  **Tool Evidence**: The grounded report explicitly states \"Increased left basal density in relation to pleural effusion.\" The phrase grounding tool localized \"large pleural effusion\" to this area.\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a massive homogeneous opacity in the left hemithorax obscuring the left diaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:15.802135+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a large homogeneous opacity in the left hemithorax obscuring the left diaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:19.115844+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:25:11.054616+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Increased left basal density in relation to pleural effusion.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.335,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.3340122199592668,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      164.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Increased left basal density in relation to atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.395,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.39307535641547864,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      193.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "No significant changes compared to the previous study.",
+                "boxes": []
+              }
+            ],
+            "report": "Increased left basal density in relation to pleural effusion. Increased left basal density in relation to atelectasis. No significant changes compared to the previous study.",
+            "original_size": [
+              512,
+              491
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0370",
+              "recorded_asset_id": "338f99ce854b46d19b2a32dead0bb02af20c7b8d51d9bd061c11f108b37b5572",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 58,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 3.804636998102069,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "large pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:25:15.791990+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "Large pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.055,
+                        0.555,
+                        0.405,
+                        0.835
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.072265625,
+                        0.5539714867617108,
+                        0.40625,
+                        0.8329938900203666
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_972bfa6e.png"
+            },
+            {
+              "image_path": "CXR3519_IM-1717-1001.png",
+              "original_size": [
+                512,
+                491
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 4.7332266345620155,
+          "derived_images": [
+            "grounding_972bfa6e.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a large homogeneous opacity in the left hemithorax obscuring the left diaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:25:19.950762+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:513e4d4c, text:588001ed, text:552dc62d, text:65d2cbca, text:786d3252",
+        "prediction_saved_at": "2026-11-27T11:25:19.950762+00:00",
+        "feedback_released_at": "2026-11-27T11:25:19.953160+00:00",
+        "utc": "2026-11-27T11:25:23.392727+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 487,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation and laterality conventions before localizing any abnormality. One approach that worked was explicitly mapping image coordinates to the anatomical side, then comparing the abnormal region against contralateral anatomy to confirm location.",
+        "utc": "2026-11-27T11:23:54.650126+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the chest X-ray provided:\n\n1.  **Orientation**: The image is a standard frontal chest radiograph. The marker \"L\" indicates the patient's left side is on the right side of the image (viewer's right).\n2.  **Observation**: There is a significant abnormality in the lower half of the lung field on the viewer's right (patient's left). This area appears opaque (white), obscuring the left hemidiaphragm and the left heart border. This pattern is characteristic of fluid accumulation in the pleural space.\n3.  **Comparison**: The lung field on the viewer's left (patient's right) is relatively clear, with visible vascular markings and a sharp costophrenic angle.\n4.  **Conclusion**: The opacity represents a large pleural effusion on the patient's left side. The BioViL-T overlay also highlights this region with high similarity scores for \"large pleural effusion\".\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity occupying the lower zone of the left hemithorax (viewer's right), which obscures the left hemidiaphragm and cardiac border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:54.672624+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray demonstrates a large opacity in the left hemithorax obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:23:56.760994+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray demonstrates a large opacity in the left hemithorax obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:23:57.382400+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:5a4f95c8, text:9dee899d, text:c4139979, text:05b22863, text:808d13f5",
+        "prediction_saved_at": "2026-11-27T11:23:57.382400+00:00",
+        "feedback_released_at": "2026-11-27T11:23:57.383475+00:00",
+        "utc": "2026-11-27T11:24:00.365309+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "joint",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 482,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation conventions before interpreting lateralized findings, then confirming which side shows the dominant abnormality. One approach that worked was explicitly separating image-side from patient-side to avoid left/right confusion errors.",
+        "utc": "2026-11-27T11:24:04.132278+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image displays a standard frontal chest radiograph. There is an \"L\" marker in the upper right corner of the image, which typically indicates the patient's left side (standard convention places the marker on the side of the anatomy it represents).\n2.  **Findings**:\n    *   **Right Lung (Left side of image)**: The lung field appears relatively clear with normal vascular markings and a sharp costophrenic angle.\n    *   **Left Lung (Right side of image)**: There is a significant abnormality. The lower two-thirds of the left hemithorax are completely opaque (white). This opacity obscures the left hemidiaphragm and the left heart border. The opacity has a meniscus shape at the lateral edge, curving upwards, which is characteristic of fluid accumulation.\n3.  **Diagnosis**: The complete opacification of the left hemithorax with blunting of the costophrenic angle and obscuring of the diaphragm is indicative of a large pleural effusion. Since it affects the left side, it is a large left pleural effusion.\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows complete opacification of the left hemithorax with obscuration of the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:04.138427+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows complete opacification of the left hemithorax with obscuration of the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:06.054985+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows complete opacification of the left hemithorax with obscuration of the left hemidiaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:24:06.772385+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:85da6854, text:395f3b13, text:f4ee9f11, text:7e27e524, text:93d586a4",
+        "prediction_saved_at": "2026-11-27T11:24:06.772385+00:00",
+        "feedback_released_at": "2026-11-27T11:24:06.773465+00:00",
+        "utc": "2026-11-27T11:24:09.278783+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "xraydar",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 397,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from verifying image orientation markers before assigning laterality to findings. One approach that worked involved explicitly mapping image left/right to patient anatomy before concluding.",
+        "utc": "2026-11-27T11:25:09.184305+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"large left pleural effusion\"}}],\"reason\":\"To verify the presence and laterality of a large pleural effusion by checking for localized radiographic findings such as blunting of the costophrenic angle, meniscus sign, or homogeneous opacity on the left side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:09.188740+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the chest X-ray image provided:\n\n1.  **Orientation**: The image displays an \"L\" marker in the upper right corner, which corresponds to the patient's left side (standard radiological convention where the viewer's right is the patient's left).\n2.  **Findings**: There is a significant opacity (whiteness) occupying the lower and middle zones of the lung field on the viewer's right side (patient's left). This opacity obscures the left hemidiaphragm and the left heart border.\n3.  **Diagnosis**: These features—homogeneous opacity blunting the costophrenic angle and obscuring adjacent structures like the diaphragm and heart border—are characteristic of a pleural effusion. Since it affects the left side and occupies a large portion of the hemithorax, it is a large left pleural effusion. The right lung field appears relatively clear with sharp costophrenic angles.\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity in the left hemithorax that obscures the left hemidiaphragm and cardiac border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:14.116432+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a large opacity obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:16.605775+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {
+            "phrase": "large left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:25:14.110045+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "Large left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.555,
+                        0.385,
+                        0.915,
+                        0.775
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.55078125,
+                        0.384928716904277,
+                        0.896484375,
+                        0.7739307535641547
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_232c9b0f.png"
+            },
+            {
+              "image_path": "CXR3519_IM-1717-1001.png",
+              "original_size": [
+                512,
+                491
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 3.718934589996934,
+          "derived_images": [
+            "grounding_232c9b0f.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a large opacity obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:25:17.419739+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:53c8bcb0, text:1069e6ad, text:a7521f2b, text:4e93e424, text:12524fb2",
+        "prediction_saved_at": "2026-11-27T11:25:17.419739+00:00",
+        "feedback_released_at": "2026-11-27T11:25:17.421168+00:00",
+        "utc": "2026-11-27T11:25:21.891250+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 15,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 497,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing bilateral structures and using anatomical landmarks to distinguish between lateralized alternatives. One approach that worked involved explicitly referencing the patient's anatomy rather than the image layout when identifying which side shows the abnormality.",
+        "utc": "2026-11-27T11:21:36.487644+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The large opacity is on the patient's left side (image right, marked L), consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:36.491350+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The large opacity is on the patient's left side (image right, marked L), consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:37.470032+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:b493fb46, text:04d7307f, text:8386dbee, text:f11995a5, text:c56829df",
+        "prediction_saved_at": "2026-11-27T11:21:37.470032+00:00",
+        "feedback_released_at": "2026-11-27T11:21:37.471149+00:00",
+        "utc": "2026-11-27T11:21:40.391319+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 435,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing symmetric anatomical structures on both sides to detect asymmetry. One approach that worked involved mapping the observed abnormality to the correct option when choices differed only by laterality.",
+        "utc": "2026-11-27T11:21:48.194605+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are on the left side, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:48.200510+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are on the left side, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:48.854815+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:673adf23, text:8949d2cf, text:fd4fe15a, text:8608b331, text:60f4e580",
+        "prediction_saved_at": "2026-11-27T11:21:48.854815+00:00",
+        "feedback_released_at": "2026-11-27T11:21:48.855992+00:00",
+        "utc": "2026-11-27T11:21:51.597143+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "joint",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 466,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from anchoring the finding to a concrete anatomical landmark and comparing both hemithoraces to establish laterality. One approach that worked was mapping the observed abnormality directly to the matching side option rather than relying on vague impressions.",
+        "utc": "2026-11-27T11:21:51.513448+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are on the left hemithorax, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:51.521028+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are on the left hemithorax, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:53.306785+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:7ca48928, text:1f49bfc5, text:fef394a7, text:d981a8b4, text:ffdfd191",
+        "prediction_saved_at": "2026-11-27T11:21:53.306785+00:00",
+        "feedback_released_at": "2026-11-27T11:21:53.308252+00:00",
+        "utc": "2026-11-27T11:21:56.211492+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "xraydar",
+      "ordinal": 15,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 503,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing bilateral anatomical landmarks to identify asymmetric abnormalities before mapping the observed side to the answer options. One approach that worked involved careful laterality verification through structured bilateral comparison rather than jumping to a diagnosis.",
+        "utc": "2026-11-27T11:21:48.911159+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The large opacity is on the left side (marked L), consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:48.915402+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The large opacity is on the left side (marked L), consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:50.263654+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:5b105e5a, text:c2686a74, text:426dc715, text:5d4e00cf, text:d5067c10",
+        "prediction_saved_at": "2026-11-27T11:21:50.263654+00:00",
+        "feedback_released_at": "2026-11-27T11:21:50.265240+00:00",
+        "utc": "2026-11-27T11:21:52.952241+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 107,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 414,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via anatomical markers before evaluating lateralized findings. One approach that worked involved comparing symmetric structures to isolate unilateral abnormalities.",
+        "utc": "2026-11-27T09:22:40.375100+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To verify the presence and laterality of a pleural effusion using grounded findings and phrase localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:22:40.382266+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image displays an \"L\" marker in the upper right corner, indicating that the patient's left side is on the right side of the image (standard radiological convention).\n2.  **Findings**: There is a significant opacity (whiteness) in the lower half of the lung field on the viewer's right (patient's left). This opacity obscures the left hemidiaphragm and the left heart border, which is characteristic of a pleural effusion. The costophrenic angle on this side is completely blunted. In contrast, the right lung field (viewer's left) appears clear with sharp costophrenic angles.\n3.  **Conclusion**: The findings indicate a large pleural effusion on the left side.\n\nTherefore, the correct option is **B. large left pleural effusion**.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity obscuring the left hemidiaphragm and heart border with blunting of the left costophrenic angle, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:22:48.054803+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a large opacity obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:22:58.573888+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:22:46.229418+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Increased left basal density in relation to pleural effusion.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.335,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.3340122199592668,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      164.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Increased left basal density in relation to atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.395,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.39307535641547864,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      193.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "No significant changes compared to the previous study.",
+                "boxes": []
+              }
+            ],
+            "report": "Increased left basal density in relation to pleural effusion. Increased left basal density in relation to atelectasis. No significant changes compared to the previous study.",
+            "original_size": [
+              512,
+              491
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0370",
+              "recorded_asset_id": "338f99ce854b46d19b2a32dead0bb02af20c7b8d51d9bd061c11f108b37b5572",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 58,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.0907870549708605,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:22:48.045921+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.055,
+                        0.655,
+                        0.335,
+                        0.835
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.072265625,
+                        0.6537678207739308,
+                        0.33984375,
+                        0.8329938900203666
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_08612f3d.png"
+            },
+            {
+              "image_path": "CXR3519_IM-1717-1001.png",
+              "original_size": [
+                512,
+                491
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.8122996799647808,
+          "derived_images": [
+            "grounding_08612f3d.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a large opacity obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:22:59.612287+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:e58bdade, text:88a34162, text:65a4d3d4, text:10e58b4d, text:aa0b87cc",
+        "prediction_saved_at": "2026-11-27T09:22:59.612287+00:00",
+        "feedback_released_at": "2026-11-27T09:22:59.614332+00:00",
+        "utc": "2026-11-27T09:23:03.081877+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 107,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 497,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first confirming image orientation and laterality markers before comparing bilateral structures for asymmetric abnormalities. One approach that worked involved explicitly linking observed visual features to their anatomical significance and cross-validating against the given options.",
+        "utc": "2026-11-27T09:25:37.743977+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image displays an \"L\" marker in the upper right corner, indicating that this side corresponds to the patient's left side.\n2.  **Findings**: There is a significant opacity (whiteness) occupying the lower and middle zones of the lung field marked as \"L\". This opacity obscures the left hemidiaphragm and the left heart border, which are classic signs of fluid accumulation in the pleural space.\n3.  **Comparison**: The right lung field appears relatively clear with normal aeration. The asymmetry between the two sides confirms a pathology on the left.\n4.  **Conclusion**: The extensive white-out of the left hemithorax is characteristic of a large pleural effusion.\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity obscuring the left hemidiaphragm and heart border on the patient's left side (indicated by the 'L' marker), consistent with a large pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:25:37.748946+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity obscuring the left hemidiaphragm and heart border on the patient's left side (indicated by the 'L' marker), consistent with a large pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:25:39.484658+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity obscuring the left hemidiaphragm and heart border on the patient's left side (indicated by the 'L' marker), consistent with a large pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:25:40.809047+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:403f25c5, text:edff8ac1, text:722d384a, text:7a78d20c, text:55aaec32",
+        "prediction_saved_at": "2026-11-27T09:25:40.809047+00:00",
+        "feedback_released_at": "2026-11-27T09:25:40.813257+00:00",
+        "utc": "2026-11-27T09:25:44.472142+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 107,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 456,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing both sides of the image to detect asymmetric findings before committing to a side. One approach that worked before involved using standard radiological orientation to avoid laterality errors when interpreting findings.",
+        "utc": "2026-11-27T09:04:44.039482+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left hemithorax shows dense opacification with blunting of the costophrenic angle and a meniscus, consistent with a large left pleural effusion, while the right lung is relatively clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:04:44.044684+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left hemithorax shows dense opacification with blunting of the costophrenic angle and a meniscus, consistent with a large left pleural effusion, while the right lung is relatively clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:04:45.684927+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:962cc390, text:04650afe, text:eebc9085, text:9ad02e0e, text:e6926b62",
+        "prediction_saved_at": "2026-11-27T09:04:45.684927+00:00",
+        "feedback_released_at": "2026-11-27T09:04:45.686063+00:00",
+        "utc": "2026-11-27T09:04:49.548525+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 107,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 446,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing anatomical orientation before interpreting lateralized abnormalities. One approach that worked involved verifying the side by referencing standard radiological orientation and confirming with any available markers.",
+        "utc": "2026-11-27T09:11:19.595096+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The large opacity is on the left side (marked L), consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:11:19.600917+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The large opacity is on the left side (marked L), consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:11:20.595255+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:1b2b9b2a, text:b8c5830f, text:16849f1f, text:ffdcc91f, text:dd11a513",
+        "prediction_saved_at": "2026-11-27T09:11:20.595255+00:00",
+        "feedback_released_at": "2026-11-27T09:11:20.596416+00:00",
+        "utc": "2026-11-27T09:11:24.759967+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 52,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 463,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via anatomical markers before assessing lateralized findings. One approach that worked involved systematically comparing symmetric structures across both sides to detect unilateral abnormalities through asymmetry.",
+        "utc": "2026-11-27T09:58:07.610102+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to localize the pleural effusion and confirm laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:58:07.613490+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the chest X-ray image provided:\n\n1.  **Orientation**: The image is a frontal chest radiograph. The marker \"L\" in the upper right corner indicates the patient's left side (standard convention places the marker on the patient's left for PA views, or it explicitly labels the side).\n2.  **Findings**: There is a significant opacity (whiteness) in the lower half of the lung field on the side marked \"L\". This opacity obscures the left hemidiaphragm and the left heart border, which is characteristic of fluid accumulation in the pleural space.\n3.  **Comparison**: The right lung field appears relatively clear with normal vascular markings and a visible diaphragm. The asymmetry confirms the pathology is unilateral.\n4.  **Conclusion**: The dense white area represents a large pleural effusion on the left side.\n\nTherefore, the correct finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity occupying the lower left hemithorax with blunting of the costophrenic angle and obscuring of the left hemidiaphragm, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:58:13.935989+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a large opacity obscuring the left hemidiaphragm and costophrenic angle, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:58:16.342129+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:58:13.929157+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Increased left basal density in relation to pleural effusion.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.335,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.3340122199592668,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      164.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Increased left basal density in relation to atelectasis.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.545,
+                      0.395,
+                      0.915,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.541015625,
+                      0.39307535641547864,
+                      0.896484375,
+                      0.7739307535641547
+                    ],
+                    "original_pixels": [
+                      277.0,
+                      193.0,
+                      459.0,
+                      380.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "No significant changes compared to the previous study.",
+                "boxes": []
+              }
+            ],
+            "report": "Increased left basal density in relation to pleural effusion. Increased left basal density in relation to atelectasis. No significant changes compared to the previous study.",
+            "original_size": [
+              512,
+              491
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0370",
+              "recorded_asset_id": "338f99ce854b46d19b2a32dead0bb02af20c7b8d51d9bd061c11f108b37b5572",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 2,
+            "generated_tokens": 58,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.308255793526769,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a large opacity obscuring the left hemidiaphragm and costophrenic angle, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:58:17.058656+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:e45ef829, text:92cb82f7, text:d85d06b9, text:0a767501, text:922ace55",
+        "prediction_saved_at": "2026-11-27T09:58:17.058656+00:00",
+        "feedback_released_at": "2026-11-27T09:58:17.060612+00:00",
+        "utc": "2026-11-27T09:58:21.953212+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "box",
+      "ordinal": 52,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 452,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation conventions before localizing pathology to a specific side. One approach that worked involved comparing the affected region against normal contralateral anatomy to justify the chosen lateralized option.",
+        "utc": "2026-11-27T10:15:56.544542+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the chest X-ray provided:\n\n1.  **Orientation**: The image has an \"L\" marker in the upper right corner, indicating that this side of the image corresponds to the patient's left side.\n2.  **Findings**: There is a significant opacity (whiteness) in the lower half of the lung field on the left side of the image (patient's left). This opacity obscures the left hemidiaphragm and the left heart border, which is characteristic of fluid accumulation in the pleural space.\n3.  **Comparison**: The right lung field (on the left side of the image) appears relatively clear with normal vascular markings and a visible diaphragm. The left lung field shows a dense, homogeneous shadow consistent with a large pleural effusion.\n\nTherefore, the finding is a large left pleural effusion.\n\n{\"answer\":\"B. large left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity in the left hemithorax (right side of the image) that obscures the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:15:56.549883+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity in the left hemithorax obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:15:58.994499+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity in the left hemithorax obscuring the left hemidiaphragm and heart border, consistent with a large left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:15:59.651829+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:c0020e69, text:4396378a, text:545098ae, text:1ce8be1f, text:798df29f",
+        "prediction_saved_at": "2026-11-27T10:15:59.651829+00:00",
+        "feedback_released_at": "2026-11-27T10:15:59.652844+00:00",
+        "utc": "2026-11-27T10:16:04.627139+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 52,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 458,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing both sides of the image to identify which side shows the abnormality. One approach that worked was anchoring the choice to a specific visual feature on the abnormal side while confirming the opposite side appeared clear.",
+        "utc": "2026-11-27T09:45:23.651839+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left hemithorax shows dense opacification with blunting of the left costophrenic angle, consistent with a large left pleural effusion, while the right side is relatively clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:45:23.656864+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left hemithorax shows dense opacification with blunting of the left costophrenic angle, consistent with a large left pleural effusion, while the right side is relatively clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:45:24.634863+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:05454f24, text:8e5419c8, text:06b187ab, text:876f7937, text:bc5e75be",
+        "prediction_saved_at": "2026-11-27T09:45:24.634863+00:00",
+        "feedback_released_at": "2026-11-27T09:45:24.653552+00:00",
+        "utc": "2026-11-27T09:45:27.652023+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "box",
+      "ordinal": 52,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 502,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing both sides of the image to detect asymmetry, since the abnormal side often deviates from the expected symmetric appearance. One approach that worked before involved inspecting the lower regions and angles for blunting or opacity differences between left and right.",
+        "utc": "2026-11-27T10:05:45.052771+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left hemithorax shows extensive lower-zone opacity with obscuration of the left costophrenic angle and diaphragm, consistent with a large left pleural effusion, while the right lung remains relatively clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:05:45.058752+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left hemithorax shows extensive lower-zone opacity with obscuration of the left costophrenic angle and diaphragm, consistent with a large left pleural effusion, while the right lung remains relatively clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:05:46.194875+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:bd96de50, text:f0e69e17, text:bc315a88, text:276761e4, text:a40087a6",
+        "prediction_saved_at": "2026-11-27T10:05:46.194875+00:00",
+        "feedback_released_at": "2026-11-27T10:05:46.196205+00:00",
+        "utc": "2026-11-27T10:05:50.465884+00:00"
+      }
+    }
+  ],
+  "question": "Which finding is in this chest X-ray?",
+  "options": {
+    "A": "large right pleural effusion",
+    "B": "large left pleural effusion"
+  },
+  "reference": "B"
+}

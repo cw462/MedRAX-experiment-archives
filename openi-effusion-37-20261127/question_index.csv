@@ -1,0 +1,297 @@
+﻿cohort,ordinal,qid,model,condition,reference,choice,correct,corrected,regressed,main_calls,tool_calls,failed_tools,memory_items,memory_chars,tool_sequence,file
+first18,1,chexbench_openi_0007,qwen,original,A,A,1,0,0,3,1,0,0,0,maira2_grounded_report,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,qwen,heatmap,A,A,1,0,0,3,1,0,0,0,xray_phrase_grounding,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,qwen,joint,A,A,1,0,0,2,0,0,0,0,,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,qwen,xraydar,A,A,1,0,0,3,1,0,0,0,maira2_grounded_report,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,deepseek,original,A,A,1,0,0,1,0,0,0,0,,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,deepseek,heatmap,A,A,1,0,0,1,0,0,0,0,,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,deepseek,joint,A,A,1,0,0,1,0,0,0,0,,first18/chexbench_openi_0007.json
+first18,1,chexbench_openi_0007,deepseek,xraydar,A,A,1,0,0,1,0,0,0,0,,first18/chexbench_openi_0007.json
+first18,2,chexbench_openi_0027,qwen,original,A,B,0,0,0,3,2,1,1,379,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,qwen,heatmap,A,B,0,0,0,2,0,0,1,362,,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,qwen,joint,A,B,0,0,0,3,1,0,1,514,chest_xray_expert,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,qwen,xraydar,A,B,0,0,0,3,2,1,1,470,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,deepseek,original,A,B,0,0,0,1,0,0,1,441,,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,deepseek,heatmap,A,B,0,0,0,1,0,0,1,470,,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,deepseek,joint,A,B,0,0,0,1,0,0,1,454,,first18/chexbench_openi_0027.json
+first18,2,chexbench_openi_0027,deepseek,xraydar,A,B,0,0,0,1,0,0,1,426,,first18/chexbench_openi_0027.json
+first18,3,chexbench_openi_0043,qwen,original,A,A,1,0,0,2,0,0,1,470,,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,qwen,heatmap,A,A,1,0,0,3,2,0,1,362,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,qwen,joint,A,A,1,0,0,3,1,0,1,519,xray_phrase_grounding,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,qwen,xraydar,A,A,1,0,0,3,2,0,1,347,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,deepseek,original,A,A,1,0,0,1,0,0,1,469,,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,deepseek,heatmap,A,A,1,0,0,1,0,0,1,481,,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,deepseek,joint,A,A,1,0,0,1,0,0,1,514,,first18/chexbench_openi_0043.json
+first18,3,chexbench_openi_0043,deepseek,xraydar,A,A,1,0,0,1,0,0,1,452,,first18/chexbench_openi_0043.json
+first18,4,chexbench_openi_0120,qwen,original,A,B,0,0,0,3,2,0,1,458,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,qwen,heatmap,A,A,1,1,0,3,1,0,1,520,xray_phrase_grounding,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,qwen,joint,A,A,1,1,0,2,0,0,1,503,,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,qwen,xraydar,A,B,0,0,0,2,0,0,1,453,,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,deepseek,original,A,B,0,0,0,1,0,0,1,473,,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,deepseek,heatmap,A,B,0,0,0,1,0,0,1,516,,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,deepseek,joint,A,B,0,0,0,1,0,0,1,434,,first18/chexbench_openi_0120.json
+first18,4,chexbench_openi_0120,deepseek,xraydar,A,B,0,0,0,1,0,0,1,501,,first18/chexbench_openi_0120.json
+first18,5,chexbench_openi_0146,qwen,original,A,A,1,0,0,4,2,0,1,492,chest_xray_expert > maira2_grounded_report,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,qwen,heatmap,A,A,1,0,0,3,1,0,1,445,xray_phrase_grounding,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,qwen,joint,A,A,1,0,0,2,0,0,1,486,,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,qwen,xraydar,A,A,1,0,0,3,2,0,1,469,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,deepseek,original,A,B,0,0,0,1,0,0,1,500,,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,deepseek,heatmap,A,A,1,1,0,1,0,0,1,449,,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,deepseek,joint,A,A,1,1,0,1,0,0,1,453,,first18/chexbench_openi_0146.json
+first18,5,chexbench_openi_0146,deepseek,xraydar,A,B,0,0,0,1,0,0,1,450,,first18/chexbench_openi_0146.json
+first18,6,chexbench_openi_0149,qwen,original,B,B,1,0,0,3,2,0,1,426,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,qwen,heatmap,B,A,0,0,1,2,0,0,1,509,,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,qwen,joint,B,B,1,0,0,2,0,0,1,492,,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,qwen,xraydar,B,B,1,0,0,3,2,0,1,503,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,deepseek,original,B,A,0,0,0,1,0,0,1,485,,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,deepseek,heatmap,B,A,0,0,0,1,0,0,1,489,,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,deepseek,joint,B,A,0,0,0,1,0,0,1,460,,first18/chexbench_openi_0149.json
+first18,6,chexbench_openi_0149,deepseek,xraydar,B,A,0,0,0,1,0,0,1,445,,first18/chexbench_openi_0149.json
+first18,7,chexbench_openi_0155,qwen,original,B,B,1,0,0,3,1,0,1,492,maira2_grounded_report,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,qwen,heatmap,B,A,0,0,1,2,0,0,1,448,,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,qwen,joint,B,B,1,0,0,3,2,0,1,489,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,qwen,xraydar,B,B,1,0,0,3,2,0,1,438,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,deepseek,original,B,B,1,0,0,1,0,0,1,502,,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,deepseek,heatmap,B,B,1,0,0,1,0,0,1,478,,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,deepseek,joint,B,B,1,0,0,1,0,0,1,451,,first18/chexbench_openi_0155.json
+first18,7,chexbench_openi_0155,deepseek,xraydar,B,B,1,0,0,1,0,0,1,451,,first18/chexbench_openi_0155.json
+first18,8,chexbench_openi_0171,qwen,original,B,B,1,0,0,3,1,0,1,457,maira2_grounded_report,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,qwen,heatmap,B,B,1,0,0,2,0,0,1,367,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,qwen,joint,B,B,1,0,0,2,0,0,1,496,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,qwen,xraydar,B,B,1,0,0,2,0,0,1,478,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,deepseek,original,B,B,1,0,0,1,0,0,1,518,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,deepseek,heatmap,B,B,1,0,0,1,0,0,1,509,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,deepseek,joint,B,B,1,0,0,1,0,0,1,431,,first18/chexbench_openi_0171.json
+first18,8,chexbench_openi_0171,deepseek,xraydar,B,B,1,0,0,1,0,0,1,435,,first18/chexbench_openi_0171.json
+first18,9,chexbench_openi_0179,qwen,original,B,B,1,0,0,3,2,0,1,510,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,qwen,heatmap,B,B,1,0,0,2,0,0,1,511,,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,qwen,joint,B,B,1,0,0,2,0,0,1,522,,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,qwen,xraydar,B,B,1,0,0,3,1,0,1,471,xray_phrase_grounding,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,deepseek,original,B,B,1,0,0,1,0,0,1,481,,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,deepseek,heatmap,B,B,1,0,0,1,0,0,1,433,,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,deepseek,joint,B,B,1,0,0,1,0,0,1,472,,first18/chexbench_openi_0179.json
+first18,9,chexbench_openi_0179,deepseek,xraydar,B,B,1,0,0,1,0,0,1,451,,first18/chexbench_openi_0179.json
+first18,10,chexbench_openi_0201,qwen,original,A,B,0,0,0,3,2,0,1,458,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,qwen,heatmap,A,A,1,1,0,3,1,0,1,482,xray_phrase_grounding,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,qwen,joint,A,B,0,0,0,3,1,0,1,477,xray_phrase_grounding,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,qwen,xraydar,A,A,1,1,0,3,1,0,1,403,xray_phrase_grounding,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,deepseek,original,A,B,0,0,0,1,0,0,1,495,,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,deepseek,heatmap,A,A,1,1,0,1,0,0,1,490,,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,deepseek,joint,A,A,1,1,0,1,0,0,1,407,,first18/chexbench_openi_0201.json
+first18,10,chexbench_openi_0201,deepseek,xraydar,A,B,0,0,0,1,0,0,1,472,,first18/chexbench_openi_0201.json
+first18,11,chexbench_openi_0202,qwen,original,B,B,1,0,0,3,1,0,1,460,chest_xray_expert,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,qwen,heatmap,B,B,1,0,0,2,0,0,1,440,,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,qwen,joint,B,B,1,0,0,2,0,0,1,396,,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,qwen,xraydar,B,B,1,0,0,3,1,0,1,477,xray_phrase_grounding,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,deepseek,original,B,B,1,0,0,1,0,0,1,452,,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,deepseek,heatmap,B,B,1,0,0,1,0,0,1,454,,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,deepseek,joint,B,B,1,0,0,1,0,0,1,412,,first18/chexbench_openi_0202.json
+first18,11,chexbench_openi_0202,deepseek,xraydar,B,B,1,0,0,1,0,0,1,475,,first18/chexbench_openi_0202.json
+first18,12,chexbench_openi_0206,qwen,original,A,A,1,0,0,3,2,0,1,495,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,qwen,heatmap,A,A,1,0,0,2,0,0,1,479,,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,qwen,joint,A,A,1,0,0,2,0,0,1,488,,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,qwen,xraydar,A,A,1,0,0,3,1,0,1,431,xray_phrase_grounding,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,deepseek,original,A,A,1,0,0,1,0,0,1,452,,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,deepseek,heatmap,A,A,1,0,0,1,0,0,1,477,,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,deepseek,joint,A,A,1,0,0,1,0,0,1,492,,first18/chexbench_openi_0206.json
+first18,12,chexbench_openi_0206,deepseek,xraydar,A,A,1,0,0,1,0,0,1,468,,first18/chexbench_openi_0206.json
+first18,13,chexbench_openi_0208,qwen,original,A,A,1,0,0,3,2,0,1,485,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,qwen,heatmap,A,B,0,0,1,3,1,0,1,428,xray_phrase_grounding,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,qwen,joint,A,A,1,0,0,4,2,1,1,390,xray_phrase_grounding > roi_crop,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,qwen,xraydar,A,B,0,0,1,3,1,0,1,419,xray_phrase_grounding,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,deepseek,original,A,B,0,0,0,1,0,0,1,506,,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,deepseek,heatmap,A,A,1,1,0,1,0,0,1,471,,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,deepseek,joint,A,A,1,1,0,1,0,0,1,411,,first18/chexbench_openi_0208.json
+first18,13,chexbench_openi_0208,deepseek,xraydar,A,A,1,1,0,1,0,0,1,472,,first18/chexbench_openi_0208.json
+first18,14,chexbench_openi_0217,qwen,original,B,A,0,0,0,2,0,0,1,506,,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,qwen,heatmap,B,A,0,0,0,2,0,0,1,437,,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,qwen,joint,B,B,1,1,0,3,2,0,1,427,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,qwen,xraydar,B,B,1,1,0,3,1,0,1,444,xray_phrase_grounding,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,deepseek,original,B,B,1,0,0,1,0,0,1,508,,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,deepseek,heatmap,B,A,0,0,1,1,0,0,1,442,,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,deepseek,joint,B,B,1,0,0,1,0,0,1,467,,first18/chexbench_openi_0217.json
+first18,14,chexbench_openi_0217,deepseek,xraydar,B,B,1,0,0,1,0,0,1,503,,first18/chexbench_openi_0217.json
+first18,15,chexbench_openi_0243,qwen,original,B,B,1,0,0,3,2,0,1,476,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,qwen,heatmap,B,B,1,0,0,2,0,0,1,487,,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,qwen,joint,B,B,1,0,0,2,0,0,1,482,,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,qwen,xraydar,B,B,1,0,0,3,1,0,1,397,xray_phrase_grounding,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,deepseek,original,B,B,1,0,0,1,0,0,1,497,,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,deepseek,heatmap,B,B,1,0,0,1,0,0,1,435,,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,deepseek,joint,B,B,1,0,0,1,0,0,1,466,,first18/chexbench_openi_0243.json
+first18,15,chexbench_openi_0243,deepseek,xraydar,B,B,1,0,0,1,0,0,1,503,,first18/chexbench_openi_0243.json
+first18,16,chexbench_openi_0254,qwen,original,B,A,0,0,0,3,2,0,1,472,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,qwen,heatmap,B,B,1,1,0,3,2,0,1,462,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,qwen,joint,B,A,0,0,0,3,2,0,1,473,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,qwen,xraydar,B,B,1,1,0,3,3,0,1,471,maira2_grounded_report > xray_phrase_grounding > xray_phrase_grounding,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,deepseek,original,B,B,1,0,0,1,0,0,1,470,,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,deepseek,heatmap,B,B,1,0,0,1,0,0,1,460,,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,deepseek,joint,B,B,1,0,0,1,0,0,1,507,,first18/chexbench_openi_0254.json
+first18,16,chexbench_openi_0254,deepseek,xraydar,B,A,0,0,1,1,0,0,1,459,,first18/chexbench_openi_0254.json
+first18,17,chexbench_openi_0264,qwen,original,A,A,1,0,0,3,2,0,1,455,maira2_grounded_report > xray_phrase_grounding,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,qwen,heatmap,A,A,1,0,0,2,0,0,1,475,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,qwen,joint,A,A,1,0,0,2,0,0,1,452,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,qwen,xraydar,A,B,0,0,1,2,0,0,1,470,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,deepseek,original,A,B,0,0,0,1,0,0,1,449,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,deepseek,heatmap,A,B,0,0,0,1,0,0,1,434,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,deepseek,joint,A,A,1,1,0,1,0,0,1,486,,first18/chexbench_openi_0264.json
+first18,17,chexbench_openi_0264,deepseek,xraydar,A,B,0,0,0,1,0,0,1,471,,first18/chexbench_openi_0264.json
+first18,18,chexbench_openi_0289,qwen,original,B,B,1,0,0,3,1,0,1,458,maira2_grounded_report,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,qwen,heatmap,B,B,1,0,0,2,0,0,1,447,,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,qwen,joint,B,B,1,0,0,3,1,0,1,473,xray_phrase_grounding,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,qwen,xraydar,B,B,1,0,0,3,1,0,1,513,xray_phrase_grounding,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,deepseek,original,B,B,1,0,0,1,0,0,1,458,,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,deepseek,heatmap,B,A,0,0,1,1,0,0,1,492,,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,deepseek,joint,B,B,1,0,0,1,0,0,1,483,,first18/chexbench_openi_0289.json
+first18,18,chexbench_openi_0289,deepseek,xraydar,B,B,1,0,0,1,0,0,1,491,,first18/chexbench_openi_0289.json
+new19,16,iu_effusion_1128,qwen,original,A,A,1,0,0,2,0,0,1,520,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,qwen,heatmap,A,A,1,0,0,3,1,0,1,420,xray_phrase_grounding,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,qwen,joint,A,A,1,0,0,2,0,0,1,424,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,qwen,xraydar,A,A,1,0,0,2,0,0,1,413,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,deepseek,original,A,A,1,0,0,1,0,0,1,423,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,deepseek,heatmap,A,A,1,0,0,1,0,0,1,515,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,deepseek,joint,A,A,1,0,0,1,0,0,1,415,,new19/iu_effusion_1128.json
+new19,16,iu_effusion_1128,deepseek,xraydar,A,A,1,0,0,1,0,0,1,476,,new19/iu_effusion_1128.json
+new19,5,iu_effusion_1383,qwen,original,B,B,1,0,0,3,2,1,1,504,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,qwen,heatmap,B,B,1,0,0,2,0,0,1,455,,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,qwen,joint,B,B,1,0,0,3,1,0,1,521,chest_xray_expert,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,qwen,xraydar,B,B,1,0,0,2,0,0,1,521,,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,deepseek,original,B,B,1,0,0,1,0,0,1,354,,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,deepseek,heatmap,B,B,1,0,0,1,0,0,1,492,,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,deepseek,joint,B,B,1,0,0,1,0,0,1,452,,new19/iu_effusion_1383.json
+new19,5,iu_effusion_1383,deepseek,xraydar,B,B,1,0,0,1,0,0,1,467,,new19/iu_effusion_1383.json
+new19,13,iu_effusion_1445,qwen,original,B,A,0,0,0,3,2,0,1,480,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,qwen,heatmap,B,A,0,0,0,3,1,0,1,465,xray_phrase_grounding,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,qwen,joint,B,A,0,0,0,2,0,0,1,421,,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,qwen,xraydar,B,B,1,1,0,3,2,0,1,466,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,deepseek,original,B,A,0,0,0,1,0,0,1,429,,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,deepseek,heatmap,B,B,1,1,0,1,0,0,1,526,,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,deepseek,joint,B,B,1,1,0,1,0,0,1,413,,new19/iu_effusion_1445.json
+new19,13,iu_effusion_1445,deepseek,xraydar,B,A,0,0,0,1,0,0,1,439,,new19/iu_effusion_1445.json
+new19,8,iu_effusion_1678,qwen,original,A,A,1,0,0,3,2,0,1,515,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,qwen,heatmap,A,A,1,0,0,3,2,0,1,468,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,qwen,joint,A,A,1,0,0,2,0,0,1,449,,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,qwen,xraydar,A,A,1,0,0,3,1,0,1,470,xray_phrase_grounding,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,deepseek,original,A,A,1,0,0,1,0,0,1,441,,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,deepseek,heatmap,A,A,1,0,0,1,0,0,1,466,,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,deepseek,joint,A,A,1,0,0,1,0,0,1,419,,new19/iu_effusion_1678.json
+new19,8,iu_effusion_1678,deepseek,xraydar,A,A,1,0,0,1,0,0,1,438,,new19/iu_effusion_1678.json
+new19,18,iu_effusion_1704,qwen,original,A,A,1,0,0,3,1,0,1,444,maira2_grounded_report,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,qwen,heatmap,A,A,1,0,0,2,0,0,1,508,,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,qwen,joint,A,A,1,0,0,2,0,0,1,410,,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,qwen,xraydar,A,A,1,0,0,3,1,0,1,446,xray_phrase_grounding,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,deepseek,original,A,A,1,0,0,1,0,0,1,432,,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,deepseek,heatmap,A,A,1,0,0,1,0,0,1,525,,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,deepseek,joint,A,A,1,0,0,1,0,0,1,415,,new19/iu_effusion_1704.json
+new19,18,iu_effusion_1704,deepseek,xraydar,A,A,1,0,0,1,0,0,1,437,,new19/iu_effusion_1704.json
+new19,17,iu_effusion_1733,qwen,original,A,A,1,0,0,2,0,0,1,437,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,qwen,heatmap,A,A,1,0,0,2,0,0,1,499,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,qwen,joint,A,B,0,0,1,2,0,0,1,424,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,qwen,xraydar,A,A,1,0,0,2,0,0,1,466,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,deepseek,original,A,A,1,0,0,1,0,0,1,485,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,deepseek,heatmap,A,A,1,0,0,1,0,0,1,489,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,deepseek,joint,A,A,1,0,0,1,0,0,1,411,,new19/iu_effusion_1733.json
+new19,17,iu_effusion_1733,deepseek,xraydar,A,A,1,0,0,1,0,0,1,468,,new19/iu_effusion_1733.json
+new19,2,iu_effusion_1792,qwen,original,B,B,1,0,0,3,1,0,1,471,maira2_grounded_report,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,qwen,heatmap,B,B,1,0,0,2,0,0,1,430,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,qwen,joint,B,B,1,0,0,2,0,0,1,521,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,qwen,xraydar,B,B,1,0,0,2,0,0,1,463,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,deepseek,original,B,A,0,0,0,1,0,0,1,506,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,deepseek,heatmap,B,B,1,1,0,1,0,0,1,461,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,deepseek,joint,B,B,1,1,0,1,0,0,0,0,,new19/iu_effusion_1792.json
+new19,2,iu_effusion_1792,deepseek,xraydar,B,B,1,1,0,1,0,0,0,0,,new19/iu_effusion_1792.json
+new19,1,iu_effusion_1845,qwen,original,A,A,1,0,0,3,2,0,0,0,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,qwen,heatmap,A,A,1,0,0,3,1,0,0,0,xray_phrase_grounding,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,qwen,joint,A,A,1,0,0,5,3,0,0,0,chest_xray_expert > maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,qwen,xraydar,A,A,1,0,0,3,1,0,0,0,xray_phrase_grounding,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,deepseek,original,A,A,1,0,0,1,0,0,0,0,,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,deepseek,heatmap,A,A,1,0,0,1,0,0,0,0,,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,deepseek,joint,A,B,0,0,1,1,0,0,0,0,,new19/iu_effusion_1845.json
+new19,1,iu_effusion_1845,deepseek,xraydar,A,B,0,0,1,1,0,0,0,0,,new19/iu_effusion_1845.json
+new19,7,iu_effusion_188,qwen,original,B,B,1,0,0,3,2,0,1,488,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,qwen,heatmap,B,B,1,0,0,2,0,0,1,456,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,qwen,joint,B,B,1,0,0,2,0,0,1,453,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,qwen,xraydar,B,B,1,0,0,2,0,0,1,467,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,deepseek,original,B,B,1,0,0,1,0,0,1,483,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,deepseek,heatmap,B,B,1,0,0,1,0,0,1,463,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,deepseek,joint,B,B,1,0,0,1,0,0,1,431,,new19/iu_effusion_188.json
+new19,7,iu_effusion_188,deepseek,xraydar,B,B,1,0,0,1,0,0,1,349,,new19/iu_effusion_188.json
+new19,4,iu_effusion_2752,qwen,original,B,B,1,0,0,2,0,0,1,496,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,qwen,heatmap,B,B,1,0,0,2,0,0,1,512,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,qwen,joint,B,B,1,0,0,2,0,0,1,430,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,qwen,xraydar,B,B,1,0,0,3,1,0,1,489,xray_phrase_grounding,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,deepseek,original,B,B,1,0,0,1,0,0,1,502,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,deepseek,heatmap,B,B,1,0,0,1,0,0,1,482,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,deepseek,joint,B,B,1,0,0,1,0,0,1,411,,new19/iu_effusion_2752.json
+new19,4,iu_effusion_2752,deepseek,xraydar,B,B,1,0,0,1,0,0,1,434,,new19/iu_effusion_2752.json
+new19,11,iu_effusion_2961,qwen,original,A,A,1,0,0,2,0,0,1,487,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,qwen,heatmap,A,B,0,0,1,3,2,0,1,463,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,qwen,joint,A,B,0,0,1,2,0,0,1,421,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,qwen,xraydar,A,A,1,0,0,2,0,0,1,500,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,deepseek,original,A,B,0,0,0,1,0,0,1,372,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,deepseek,heatmap,A,B,0,0,0,1,0,0,1,385,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,deepseek,joint,A,B,0,0,0,1,0,0,1,406,,new19/iu_effusion_2961.json
+new19,11,iu_effusion_2961,deepseek,xraydar,A,A,1,1,0,1,0,0,1,453,,new19/iu_effusion_2961.json
+new19,9,iu_effusion_3260,qwen,original,B,B,1,0,0,2,0,0,1,482,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,qwen,heatmap,B,B,1,0,0,2,0,0,1,463,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,qwen,joint,B,B,1,0,0,2,0,0,1,437,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,qwen,xraydar,B,B,1,0,0,3,1,0,1,415,xray_phrase_grounding,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,deepseek,original,B,B,1,0,0,1,0,0,1,377,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,deepseek,heatmap,B,B,1,0,0,1,0,0,1,470,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,deepseek,joint,B,B,1,0,0,1,0,0,1,409,,new19/iu_effusion_3260.json
+new19,9,iu_effusion_3260,deepseek,xraydar,B,A,0,0,1,1,0,0,1,469,,new19/iu_effusion_3260.json
+new19,14,iu_effusion_3536,qwen,original,A,B,0,0,0,3,1,0,1,456,maira2_grounded_report,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,qwen,heatmap,A,A,1,1,0,3,1,0,1,397,xray_phrase_grounding,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,qwen,joint,A,B,0,0,0,3,1,0,1,457,maira2_grounded_report,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,qwen,xraydar,A,A,1,1,0,3,2,0,1,420,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,deepseek,original,A,A,1,0,0,1,0,0,1,429,,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,deepseek,heatmap,A,B,0,0,1,1,0,0,1,458,,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,deepseek,joint,A,B,0,0,1,1,0,0,1,508,,new19/iu_effusion_3536.json
+new19,14,iu_effusion_3536,deepseek,xraydar,A,A,1,0,0,1,0,0,1,492,,new19/iu_effusion_3536.json
+new19,6,iu_effusion_3595,qwen,original,B,B,1,0,0,2,0,0,1,434,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,qwen,heatmap,B,B,1,0,0,2,0,0,1,462,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,qwen,joint,B,B,1,0,0,2,0,0,1,502,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,qwen,xraydar,B,B,1,0,0,3,1,0,1,517,xray_phrase_grounding,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,deepseek,original,B,A,0,0,0,1,0,0,1,499,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,deepseek,heatmap,B,B,1,1,0,1,0,0,1,463,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,deepseek,joint,B,B,1,1,0,1,0,0,1,446,,new19/iu_effusion_3595.json
+new19,6,iu_effusion_3595,deepseek,xraydar,B,B,1,1,0,1,0,0,1,469,,new19/iu_effusion_3595.json
+new19,3,iu_effusion_3666,qwen,original,A,A,1,0,0,2,0,0,1,480,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,qwen,heatmap,A,A,1,0,0,2,0,0,1,463,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,qwen,joint,A,A,1,0,0,2,0,0,1,488,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,qwen,xraydar,A,A,1,0,0,3,1,0,1,466,xray_phrase_grounding,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,deepseek,original,A,B,0,0,0,1,0,0,1,507,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,deepseek,heatmap,A,A,1,1,0,1,0,0,1,422,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,deepseek,joint,A,A,1,1,0,1,0,0,1,436,,new19/iu_effusion_3666.json
+new19,3,iu_effusion_3666,deepseek,xraydar,A,A,1,1,0,1,0,0,1,454,,new19/iu_effusion_3666.json
+new19,19,iu_effusion_374,qwen,original,A,A,1,0,0,3,2,0,1,407,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,qwen,heatmap,A,A,1,0,0,3,2,0,1,470,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,qwen,joint,A,A,1,0,0,2,0,0,1,511,,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,qwen,xraydar,A,A,1,0,0,3,1,0,1,414,xray_phrase_grounding,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,deepseek,original,A,A,1,0,0,1,0,0,1,450,,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,deepseek,heatmap,A,A,1,0,0,1,0,0,1,472,,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,deepseek,joint,A,A,1,0,0,1,0,0,1,448,,new19/iu_effusion_374.json
+new19,19,iu_effusion_374,deepseek,xraydar,A,A,1,0,0,1,0,0,1,424,,new19/iu_effusion_374.json
+new19,10,iu_effusion_3846,qwen,original,B,B,1,0,0,3,2,0,1,513,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,qwen,heatmap,B,B,1,0,0,2,0,0,1,462,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,qwen,joint,B,B,1,0,0,2,0,0,1,449,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,qwen,xraydar,B,B,1,0,0,2,0,0,1,488,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,deepseek,original,B,B,1,0,0,1,0,0,1,502,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,deepseek,heatmap,B,B,1,0,0,1,0,0,1,461,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,deepseek,joint,B,B,1,0,0,1,0,0,1,442,,new19/iu_effusion_3846.json
+new19,10,iu_effusion_3846,deepseek,xraydar,B,B,1,0,0,1,0,0,1,475,,new19/iu_effusion_3846.json
+new19,15,iu_effusion_576,qwen,original,B,B,1,0,0,3,1,0,1,509,maira2_grounded_report,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,qwen,heatmap,B,A,0,0,1,3,1,0,1,439,xray_phrase_grounding,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,qwen,joint,B,B,1,0,0,2,0,0,1,424,,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,qwen,xraydar,B,B,1,0,0,3,2,0,1,413,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,deepseek,original,B,A,0,0,0,1,0,0,1,488,,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,deepseek,heatmap,B,A,0,0,0,1,0,0,1,474,,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,deepseek,joint,B,B,1,1,0,1,0,0,1,418,,new19/iu_effusion_576.json
+new19,15,iu_effusion_576,deepseek,xraydar,B,B,1,1,0,1,0,0,1,433,,new19/iu_effusion_576.json
+new19,12,iu_effusion_677,qwen,original,A,A,1,0,0,3,1,0,1,448,maira2_grounded_report,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,qwen,heatmap,A,A,1,0,0,3,2,0,1,411,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,qwen,joint,A,A,1,0,0,2,0,0,1,453,,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,qwen,xraydar,A,A,1,0,0,3,2,0,1,468,maira2_grounded_report > xray_phrase_grounding,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,deepseek,original,A,A,1,0,0,1,0,0,1,470,,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,deepseek,heatmap,A,A,1,0,0,1,0,0,1,489,,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,deepseek,joint,A,A,1,0,0,1,0,0,1,401,,new19/iu_effusion_677.json
+new19,12,iu_effusion_677,deepseek,xraydar,A,A,1,0,0,1,0,0,1,461,,new19/iu_effusion_677.json

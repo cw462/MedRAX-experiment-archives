@@ -1,0 +1,1064 @@
+{
+  "cohort": "new19",
+  "question_id": "iu_effusion_188",
+  "image": "images/188_IM-0569-1001.dcm.png",
+  "view": "frontal",
+  "phrase": "pleural effusion",
+  "xraydar_probability": 0.9740657806396484,
+  "biovil": {
+    "question_id": "iu_effusion_188",
+    "view": "frontal",
+    "phrase": "pleural effusion",
+    "path": "iu_effusion_188.png",
+    "size": [
+      2049,
+      2048
+    ],
+    "p05": -0.019845241867005824,
+    "p95": 0.36712007224559773,
+    "fraction_scored": 0.7652513421181064
+  },
+  "imt": {
+    "question_id": "iu_effusion_188",
+    "prompt": "give the accurate bbox of pleural effusion",
+    "boxes": [
+      [
+        1013,
+        939,
+        1634,
+        1692
+      ]
+    ],
+    "raw_bins": "<bin_494> <bin_458> <bin_797> <bin_825>",
+    "raw_text": "",
+    "size": [
+      2048,
+      2049
+    ]
+  },
+  "runs": [
+    {
+      "batch": "paired19",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 488,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation conventions before interpreting findings, which helped avoid lateralization errors. One approach that worked involved systematically comparing bilateral regions to identify asymmetries before mapping observations to diagnostic criteria.",
+        "utc": "2026-11-27T11:00:06.216812+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"Obtain a grounded radiology report and localize the pleural effusion to determine laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:00:06.229787+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image is a standard frontal chest radiograph. By convention, the left side of the image corresponds to the patient's right side, and the right side of the image corresponds to the patient's left side.\n2.  **Visual Findings**: There is a significant opacity (whiteness) in the lower zone of the lung field on the right side of the image. This area obscures the left hemidiaphragm and the left costophrenic angle. In contrast, the lung field on the left side of the image (patient's right) appears relatively clear with a sharp costophrenic angle.\n3.  **Tool Evidence**: The `maira2_grounded_report` tool explicitly identified \"Increased left basal density in relation to pleural effusion\" and localized it to the patient's left side (coordinates corresponding to the right side of the displayed image). The `xray_phrase_grounding` tool also localized the finding of \"pleural effusion\" to this same region.\n4.  **Conclusion**: The findings are consistent with a fluid collection in the left pleural space, known as a left pleural effusion.\n\nTherefore, the correct option is B.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:00:15.165342+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:00:24.046330+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:00:13.059904+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Increased left basal density in relation to consolidation.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.505,
+                      0.545,
+                      0.805,
+                      0.795
+                    ],
+                    "original_normalized": [
+                      0.5048828125,
+                      0.5446559297218155,
+                      0.8046875,
+                      0.7945339189848707
+                    ],
+                    "original_pixels": [
+                      1034.0,
+                      1116.0,
+                      1648.0,
+                      1628.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Increased left basal density in relation to pleural effusion.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.495,
+                      0.545,
+                      0.805,
+                      0.835
+                    ],
+                    "original_normalized": [
+                      0.49462890625,
+                      0.5446559297218155,
+                      0.8046875,
+                      0.8345534407027818
+                    ],
+                    "original_pixels": [
+                      1013.0,
+                      1116.0,
+                      1648.0,
+                      1710.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Bilateral interstitial pattern.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.085,
+                      0.275,
+                      0.375,
+                      0.765
+                    ],
+                    "original_normalized": [
+                      0.0849609375,
+                      0.27476817959980476,
+                      0.375,
+                      0.7642752562225475
+                    ],
+                    "original_pixels": [
+                      174.0,
+                      563.0,
+                      768.0,
+                      1566.0
+                    ]
+                  },
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.215,
+                      0.755,
+                      0.755
+                    ],
+                    "original_normalized": [
+                      0.48486328125,
+                      0.21473889702293802,
+                      0.7548828125,
+                      0.7545143972669595
+                    ],
+                    "original_pixels": [
+                      993.0,
+                      440.0,
+                      1546.0,
+                      1546.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Cardiomegaly.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.245,
+                      0.475,
+                      0.745,
+                      0.825
+                    ],
+                    "original_normalized": [
+                      0.24462890625,
+                      0.4743777452415813,
+                      0.74462890625,
+                      0.8243045387994143
+                    ],
+                    "original_pixels": [
+                      501.0,
+                      972.0,
+                      1525.0,
+                      1689.0
+                    ]
+                  }
+                ]
+              }
+            ],
+            "report": "Increased left basal density in relation to consolidation. Increased left basal density in relation to pleural effusion. Bilateral interstitial pattern. Cardiomegaly.",
+            "original_size": [
+              2048,
+              2049
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Indiana projection table"
+            },
+            "grounded_box_count": 5,
+            "generated_tokens": 82,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.324642764404416,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:00:15.132154+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.005,
+                        0.705,
+                        0.335,
+                        0.915
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.0048828125,
+                        0.7042459736456809,
+                        0.3349609375,
+                        0.9141044411908248
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_70cd7847.png"
+            },
+            {
+              "image_path": "188_IM-0569-1001.dcm.png",
+              "original_size": [
+                2048,
+                2049
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 2.0651185382157564,
+          "derived_images": [
+            "grounding_70cd7847.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:00:26.674639+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:1b698229, text:128df4c8, text:768903fd, text:58feaeb3, text:ba40390b",
+        "prediction_saved_at": "2026-11-27T11:00:26.674639+00:00",
+        "feedback_released_at": "2026-11-27T11:00:26.676655+00:00",
+        "utc": "2026-11-27T11:00:29.867171+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 456,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from establishing spatial orientation via anatomical landmarks before comparing bilateral regions for asymmetry. One approach that worked involved correlating observed asymmetric findings with standard terminology after confirming image laterality.",
+        "utc": "2026-11-27T11:08:53.629006+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image is a standard frontal chest radiograph. Anatomical landmarks such as the heart shadow (which is predominantly on the left side of the patient's chest) and the gastric air bubble under the left hemidiaphragm confirm that the viewer's right corresponds to the patient's left, and vice versa.\n2.  **Findings**: There is a significant abnormality in the lower lung zone on the viewer's right side (patient's left). This area shows a dense, homogeneous opacity that obscures the left costophrenic angle and the left hemidiaphragm. This appearance is characteristic of fluid accumulation in the pleural space.\n3.  **Comparison**: The opposite side (viewer's left, patient's right) shows a sharp costophrenic angle and clear lung fields, indicating no effusion there.\n4.  **Conclusion**: The presence of this opacity on the patient's left side indicates a left pleural effusion. The provided overlay also highlights this region with high similarity scores for \"pleural effusion\".\n\nTherefore, the correct option is B.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray demonstrates a dense opacity in the left lower lung zone with blunting of the left costophrenic angle and obscuration of the left hemidiaphragm, which are classic signs of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:08:53.661872+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone with blunting of the left costophrenic angle, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:08:58.872515+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity in the left lower lung zone with blunting of the left costophrenic angle, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:09:00.346382+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:cc72f4de, text:d73b8680, text:e191260c, text:b38478ac, text:98c9b68d",
+        "prediction_saved_at": "2026-11-27T11:09:00.346382+00:00",
+        "feedback_released_at": "2026-11-27T11:09:00.347504+00:00",
+        "utc": "2026-11-27T11:09:04.662276+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "qwen",
+      "condition": "joint",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 453,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation and laterality conventions before localizing asymmetric findings. One approach that worked involved comparing affected versus normal regions as an internal control to confirm the lateralized diagnosis.",
+        "utc": "2026-11-27T11:09:30.409268+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image is a standard frontal chest radiograph. In medical imaging, the left side of the image corresponds to the patient's right side, and the right side of the image corresponds to the patient's left side.\n2.  **Findings**: There is a significant opacity (whiteness) in the lower zone of the lung field on the right side of the image. This opacity obscures the left hemidiaphragm and the left costophrenic angle.\n3.  **Diagnosis**: This pattern of blunting of the costophrenic angle and homogeneous opacity at the lung base is characteristic of a pleural effusion. Since this finding is on the right side of the image, it corresponds to the patient's **left** side. The right lung field (left side of the image) appears relatively clear with a sharp costophrenic angle.\n4.  **Supporting Evidence**: The provided overlays confirm this localization. The \"BioViL-T overlay\" shows high similarity scores (warm colors) concentrated over the left hemithorax. The \"IMT-CXR localization\" places a bounding box specifically around the abnormality in the left lung field.\n\nTherefore, the finding is a left pleural effusion.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray demonstrates a dense opacity in the left lower lung zone with blunting of the left costophrenic angle, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:09:30.458598+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a significant opacity and blunting of the costophrenic angle on the patient's left side (right side of the image), which is characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:09:38.506521+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a significant opacity and blunting of the costophrenic angle on the patient's left side (right side of the image), which is characteristic of a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:09:41.999848+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:f2f6edca, text:631ef69c, text:52de01b0, text:7151eb5d, text:1daaa6c3",
+        "prediction_saved_at": "2026-11-27T11:09:41.999848+00:00",
+        "feedback_released_at": "2026-11-27T11:09:42.000988+00:00",
+        "utc": "2026-11-27T11:09:46.312187+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "qwen",
+      "condition": "xraydar",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 467,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from verifying spatial orientation markers before localizing findings, since image laterality may not match intuitive expectations. One approach that worked involved cross-checking laterality through multiple independent cues before committing to a diagnosis.",
+        "utc": "2026-11-27T11:03:47.341881+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "To determine the correct finding, we must first establish the orientation of the chest X-ray.\n\n1.  **Laterality Check**: In standard medical imaging (PA view), the image is viewed as if facing the patient. Therefore, the left side of the image corresponds to the patient's right side, and the right side of the image corresponds to the patient's left side.\n2.  **Anatomical Landmarks**: The cardiac silhouette (heart) is typically positioned slightly to the left of the midline. In this image, the heart shadow is clearly visible on the right side of the image frame. This confirms that the right side of the image represents the patient's left side. Additionally, there appears to be an \"L\" marker or similar orientation indicator on the upper right portion of the image (patient's left shoulder area), further confirming this orientation.\n3.  **Pathology Identification**: There is a significant opacity in the lower zone of the lung field on the right side of the image (the patient's left side). This opacity obscures the left hemidiaphragm and the costophrenic angle, which is characteristic of fluid accumulation in the pleural space. The meniscus sign (curved upper border of the fluid) is also suggested.\n4.  **Conclusion**: Since the opacity is located in the patient's left hemithorax, the finding is a left pleural effusion.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone with blunting of the costophrenic angle, consistent with a pleural effusion; orientation markers confirm this is the patient's left side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:03:47.357229+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone with blunting of the costophrenic angle, consistent with a pleural effusion; orientation markers confirm this is the patient's left side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:03:50.839004+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity in the left lower lung zone with blunting of the costophrenic angle, consistent with a pleural effusion; orientation markers confirm this is the patient's left side.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:03:51.908938+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:5a71616e, text:5295cc32, text:f4cb6b07, text:fb514a68, text:9e1f3d6a",
+        "prediction_saved_at": "2026-11-27T11:03:51.908938+00:00",
+        "feedback_released_at": "2026-11-27T11:03:51.910368+00:00",
+        "utc": "2026-11-27T11:03:55.038833+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 483,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing anatomical orientation to distinguish the two sides before evaluating any abnormality. One approach that worked involved anchoring each candidate finding to a concrete landmark and its characteristic visual sign, then confirming laterality explicitly.",
+        "utc": "2026-11-27T10:58:18.437211+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:58:18.453547+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:58:20.708384+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:cb160c9f, text:0fe0d202, text:709e4613, text:98f4bacd, text:723bcc6b",
+        "prediction_saved_at": "2026-11-27T10:58:20.708384+00:00",
+        "feedback_released_at": "2026-11-27T10:58:20.709369+00:00",
+        "utc": "2026-11-27T10:58:23.546290+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 463,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from comparing bilateral structures to confirm laterality of an asymmetric finding, with the normal side helping rule out the alternative. One approach that worked involved verifying laterality against radiological convention before finalizing the choice.",
+        "utc": "2026-11-27T11:08:39.665800+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a meniscus-like opacity, while the right costophrenic angle appears sharp, indicating a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:08:39.703264+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a meniscus-like opacity, while the right costophrenic angle appears sharp, indicating a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:08:44.081788+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:c8381e03, text:94e9c5d6, text:74bf6f94, text:155e72df, text:d0379d15",
+        "prediction_saved_at": "2026-11-27T11:08:44.081788+00:00",
+        "feedback_released_at": "2026-11-27T11:08:44.083460+00:00",
+        "utc": "2026-11-27T11:08:46.971379+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "deepseek",
+      "condition": "joint",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 431,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing symmetric anatomical landmarks to identify unilateral abnormalities. One approach that worked before involved correlating observed findings with their anatomical location to confirm laterality.",
+        "utc": "2026-11-27T11:08:41.508164+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:08:45.735839+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:08:52.780884+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:92c58696, text:2f028dc5, text:1d1b67b3, text:5207db71, text:e898468c",
+        "prediction_saved_at": "2026-11-27T11:08:52.780884+00:00",
+        "feedback_released_at": "2026-11-27T11:08:52.781987+00:00",
+        "utc": "2026-11-27T11:08:56.207032+00:00"
+      }
+    },
+    {
+      "batch": "paired19",
+      "model": "deepseek",
+      "condition": "xraydar",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 349,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing the same anatomical landmark on both sides to detect asymmetry when distinguishing between lateralized options.",
+        "utc": "2026-11-27T11:02:53.425602+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a meniscus-like opacity, while the right costophrenic angle appears sharp, indicating a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:02:53.440136+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a meniscus-like opacity, while the right costophrenic angle appears sharp, indicating a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:02:54.952528+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:37161c1a, text:a5e11367, text:bd72b67c, text:d5cb989a, text:03723859",
+        "prediction_saved_at": "2026-11-27T11:02:54.952528+00:00",
+        "feedback_released_at": "2026-11-27T11:02:54.953682+00:00",
+        "utc": "2026-11-27T11:02:57.538220+00:00"
+      }
+    },
+    {
+      "batch": "imt19",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 480,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from establishing image orientation and laterality before interpreting lateralized findings. One approach that worked previously involved confirming the side of an abnormality using standard radiological orientation prior to selecting between laterality-dependent options.",
+        "utc": "2026-11-27T10:33:10.995648+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to verify the presence and laterality of any pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:33:11.009632+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the chest X-ray image provided:\n\n1.  **Orientation**: The image is a standard frontal chest radiograph. In medical imaging, the left side of the image corresponds to the patient's right side, and the right side of the image corresponds to the patient's left side.\n2.  **Observation**: There is a significant opacity (whiteness) in the lower zone of the lung field on the right side of the image. This corresponds to the patient's **left** hemithorax.\n3.  **Findings**: The opacity obscures the left costophrenic angle and the left hemidiaphragm, which are classic signs of fluid accumulation in the pleural space. The density appears homogeneous and blunts the lateral angle, consistent with a pleural effusion. The right lung field (on the left side of the image) appears relatively clear with sharp costophrenic angles.\n4.  **Conclusion**: The abnormality is located on the patient's left side. Therefore, the finding is a left pleural effusion.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:33:18.761664+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:33:28.183071+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T10:33:18.733198+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Increased left basal density in relation to consolidation.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.505,
+                      0.545,
+                      0.805,
+                      0.795
+                    ],
+                    "original_normalized": [
+                      0.5048828125,
+                      0.5446559297218155,
+                      0.8046875,
+                      0.7945339189848707
+                    ],
+                    "original_pixels": [
+                      1034.0,
+                      1116.0,
+                      1648.0,
+                      1628.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Increased left basal density in relation to pleural effusion.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.495,
+                      0.545,
+                      0.805,
+                      0.835
+                    ],
+                    "original_normalized": [
+                      0.49462890625,
+                      0.5446559297218155,
+                      0.8046875,
+                      0.8345534407027818
+                    ],
+                    "original_pixels": [
+                      1013.0,
+                      1116.0,
+                      1648.0,
+                      1710.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Bilateral interstitial pattern.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.085,
+                      0.275,
+                      0.375,
+                      0.765
+                    ],
+                    "original_normalized": [
+                      0.0849609375,
+                      0.27476817959980476,
+                      0.375,
+                      0.7642752562225475
+                    ],
+                    "original_pixels": [
+                      174.0,
+                      563.0,
+                      768.0,
+                      1566.0
+                    ]
+                  },
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.215,
+                      0.755,
+                      0.755
+                    ],
+                    "original_normalized": [
+                      0.48486328125,
+                      0.21473889702293802,
+                      0.7548828125,
+                      0.7545143972669595
+                    ],
+                    "original_pixels": [
+                      993.0,
+                      440.0,
+                      1546.0,
+                      1546.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Cardiomegaly.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.245,
+                      0.475,
+                      0.745,
+                      0.825
+                    ],
+                    "original_normalized": [
+                      0.24462890625,
+                      0.4743777452415813,
+                      0.74462890625,
+                      0.8243045387994143
+                    ],
+                    "original_pixels": [
+                      501.0,
+                      972.0,
+                      1525.0,
+                      1689.0
+                    ]
+                  }
+                ]
+              }
+            ],
+            "report": "Increased left basal density in relation to consolidation. Increased left basal density in relation to pleural effusion. Bilateral interstitial pattern. Cardiomegaly.",
+            "original_size": [
+              2048,
+              2049
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Indiana projection table"
+            },
+            "grounded_box_count": 5,
+            "generated_tokens": 82,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.630699250847101,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a dense opacity in the left lower lung zone that obscures the left hemidiaphragm and costophrenic angle, which is characteristic of a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:33:29.421608+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8a24c024, text:83acc11f, text:462bba97, text:003ab2b5, text:e94a2d91",
+        "prediction_saved_at": "2026-11-27T10:33:29.421608+00:00",
+        "feedback_released_at": "2026-11-27T10:33:29.423437+00:00",
+        "utc": "2026-11-27T10:33:33.320054+00:00"
+      }
+    },
+    {
+      "batch": "imt19",
+      "model": "qwen",
+      "condition": "box",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 506,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first anchoring spatial orientation conventions before evaluating lateralized findings, since mirrored display perspectives can otherwise lead to laterality reversal. One approach that worked involved systematically contrasting the abnormal side against the normal side to confirm the finding.",
+        "utc": "2026-11-27T10:34:22.548087+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the chest X-ray provided:\n\n1.  **Orientation**: In standard medical imaging, the left side of the image corresponds to the patient's right side, and the right side of the image corresponds to the patient's left side.\n2.  **Observation**: There is a significant opacity (whiteness) in the lower zone of the lung field on the right side of the image. This area obscures the costophrenic angle (the sharp corner at the bottom of the lung) and the hemidiaphragm.\n3.  **Diagnosis**: The blunting of the costophrenic angle and homogeneous opacity in the lower lung zone are classic signs of a pleural effusion. Since this finding is on the right side of the image, it corresponds to the patient's **left** side. The right lung field (left side of the image) appears relatively clear with a visible costophrenic angle.\n\nTherefore, the finding is a left pleural effusion.\n\n{\"answer\":\"B. left pleural effusion\",\"reason\":\"The chest X-ray shows a homogenous opacity in the left lower lung zone (right side of the image) with blunting of the left costophrenic angle, which is characteristic of a pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:34:22.576628+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows a homogenous opacity in the left lower lung zone (right side of the image) with blunting of the left costophrenic angle, which is characteristic of a pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:34:26.568645+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows a homogenous opacity in the left lower lung zone (right side of the image) with blunting of the left costophrenic angle, which is characteristic of a pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:34:27.825836+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:168d70ea, text:80a2fcfd, text:82fd9bd1, text:dd133ed5, text:f2906022",
+        "prediction_saved_at": "2026-11-27T10:34:27.825836+00:00",
+        "feedback_released_at": "2026-11-27T10:34:27.827061+00:00",
+        "utc": "2026-11-27T10:34:30.488535+00:00"
+      }
+    },
+    {
+      "batch": "imt19",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 7,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 456,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from anchoring on canonical radiological signs and confirming laterality against standard orientation conventions. One approach that worked involved explicitly mapping the localized finding to the correct anatomical side before selecting an option.",
+        "utc": "2026-11-27T10:31:13.053683+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:31:13.076769+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a meniscus-like opacity, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:31:14.419359+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:587f25e9, text:fcff39b6, text:b7191308, text:b2765f4f, text:4b6b8764",
+        "prediction_saved_at": "2026-11-27T10:31:14.419359+00:00",
+        "feedback_released_at": "2026-11-27T10:31:14.421477+00:00",
+        "utc": "2026-11-27T10:31:18.218603+00:00"
+      }
+    },
+    {
+      "batch": "imt19",
+      "model": "deepseek",
+      "condition": "box",
+      "ordinal": 7,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 487,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first confirming image orientation against radiological convention before assigning laterality to any finding. One approach that worked previously was localizing the abnormality anatomically to a hemithorax, then mapping that location to the corresponding left/right option.",
+        "utc": "2026-11-27T10:33:09.608054+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunted costophrenic angle are on the patient's left side, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:33:09.635702+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunted costophrenic angle are on the patient's left side, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:33:11.406427+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:9f4ccda7, text:e5222b30, text:af6765ee, text:ee58a43b, text:44f71ac5",
+        "prediction_saved_at": "2026-11-27T10:33:11.406427+00:00",
+        "feedback_released_at": "2026-11-27T10:33:11.408796+00:00",
+        "utc": "2026-11-27T10:33:14.594058+00:00"
+      }
+    }
+  ],
+  "question": "Which finding is in this chest X-ray?",
+  "options": {
+    "A": "right pleural effusion",
+    "B": "left pleural effusion"
+  },
+  "reference": "B"
+}

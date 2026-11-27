@@ -1,0 +1,1774 @@
+{
+  "cohort": "first18",
+  "question_id": "chexbench_openi_0027",
+  "image": "images/openi/images/CXR509_IM-2125-1001.png",
+  "view": "frontal",
+  "phrase": "pleural effusion",
+  "xraydar_probability": 0.7409622669219971,
+  "biovil": {
+    "question_id": "chexbench_openi_0027",
+    "view": "frontal",
+    "phrase": "pleural effusion",
+    "path": "chexbench_openi_0027.png",
+    "size": [
+      420,
+      512
+    ],
+    "p05": -0.20253574550151826,
+    "p95": 0.07516174316406235,
+    "fraction_scored": 0.6263439360119047
+  },
+  "imt": {
+    "question_id": "chexbench_openi_0027",
+    "prompt": "give the accurate bbox of pleural effusion",
+    "boxes": [
+      [
+        58,
+        296,
+        90,
+        344
+      ]
+    ],
+    "raw_bins": "<bin_114> <bin_704> <bin_176> <bin_819>",
+    "raw_text": "",
+    "size": [
+      512,
+      420
+    ]
+  },
+  "runs": [
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 2,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 379,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation markers before interpreting laterality-sensitive findings, since radiological convention places the patient's left on the viewer's right.",
+        "utc": "2026-11-27T11:20:44.016579+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To identify the presence and laterality of pleural effusion using grounded findings and phrase localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:44.021393+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image contains an \"LT\" marker in the upper right corner, which indicates that the viewer's right side corresponds to the patient's left side.\n2.  **Pathology Identification**: There is a large area of opacity (whiteness) occupying the majority of the hemithorax on the viewer's left side. This corresponds to the patient's **right** lung field.\n3.  **Specific Findings**: The MAIRA-2 report identifies \"Patchy infiltrates in the right lung\" and \"Pneumothorax at the right lung apex.\" In the context of pleural effusion questions, extensive opacification of one hemithorax with obscuration of the diaphragm and heart border is characteristic of a pleural effusion (often complicated by underlying consolidation or atelectasis). The left lung (viewer's right) appears relatively clear with normal vascular markings.\n4.  **Conclusion**: The abnormality is located on the patient's right side. Therefore, the finding is a right pleural effusion.\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray shows extensive opacity in the right hemithorax (patient's right, viewer's left), consistent with a right pleural effusion, while the left lung field remains clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:32.387069+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows extensive opacity in the right hemithorax (viewer's left), consistent with a right pleural effusion, while the left lung is clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:40.319205+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:20:59.345484+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Endotracheal tube tip at the level of the clavicles.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.005,
+                      0.505,
+                      0.275
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.004761904761904762,
+                      0.50390625,
+                      0.27380952380952384
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      2.0,
+                      258.0,
+                      115.00000000000001
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Right subclavian catheter tip at the cavoatrial junction.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.125,
+                      0.445,
+                      0.615
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.12380952380952381,
+                      0.453125,
+                      0.6142857142857143
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      52.0,
+                      232.0,
+                      258.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left-sided chest tube with the tip at the apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.125,
+                      0.985,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.486328125,
+                      0.12380952380952381,
+                      0.896484375,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      249.0,
+                      52.0,
+                      459.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Extensive subcutaneous emphysema.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.005,
+                      0.035,
+                      0.995,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.09375,
+                      0.03333333333333333,
+                      0.904296875,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      48.0,
+                      14.0,
+                      463.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Pneumothorax at the right lung apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.115,
+                      0.425,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.11428571428571428,
+                      0.4375,
+                      0.7738095238095238
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      48.0,
+                      224.0,
+                      325.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Patchy infiltrates in the right lung.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.165,
+                      0.425,
+                      0.805
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.16428571428571428,
+                      0.4375,
+                      0.8047619047619048
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      69.0,
+                      224.0,
+                      338.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left lung is clear.",
+                "boxes": []
+              }
+            ],
+            "report": "Endotracheal tube tip at the level of the clavicles. Right subclavian catheter tip at the cavoatrial junction. Left-sided chest tube with the tip at the apex. Extensive subcutaneous emphysema. Pneumothorax at the right lung apex. Patchy infiltrates in the right lung. Left lung is clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet, no question/options/answer/feedback consulted.",
+              "sheet": 3,
+              "annotation_id": "V0157",
+              "recorded_asset_id": "7367a5e3a13ac799c7a2e160147a8730cf2ea11d0b5bec75d812dbc5198611f6",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 6,
+            "generated_tokens": 141,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 14.533642936497927,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:21:32.378300+00:00",
+          "status": "failed",
+          "observation": null,
+          "error": "r54_phrase_incomplete_or_non_eos_or_original_failure",
+          "cache_hit": false,
+          "elapsed_s": 33.027539160102606
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows extensive opacity in the right hemithorax (viewer's left), consistent with a right pleural effusion, while the left lung is clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:41.219576+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 1
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:21:41.219576+00:00",
+        "feedback_released_at": "2026-11-27T11:21:41.222768+00:00",
+        "utc": "2026-11-27T11:21:41.224652+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 362,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation and laterality conventions before interpreting findings, since side misidentification has been a recurring error source.",
+        "utc": "2026-11-27T11:20:46.185361+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains text \"LT\" (Left) and \"RT\" (Right) markers, confirming standard radiological orientation where the left side of the image corresponds to the patient's right side.\n2.  **Findings**: There is a significant abnormality in the lower zone of the lung field on the left side of the image (patient's right). This area shows homogeneous opacity that obscures the right hemidiaphragm and the right costophrenic angle.\n3.  **Diagnosis**: The blunting of the costophrenic angle and the meniscus sign (though partially obscured by overlying structures/tubes) are characteristic features of a pleural effusion. Since this finding is on the patient's right side, it represents a right pleural effusion. The left lung field (right side of the image) appears relatively clear with a sharp costophrenic angle.\n\nTherefore, the correct option is B.\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray demonstrates opacification of the right lower hemithorax with blunting of the right costophrenic angle and obscuration of the right hemidiaphragm, which are classic signs of a right-sided pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:46.190064+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows homogeneous opacity in the right lower lung zone with blunting of the right costophrenic angle and obscuration of the right hemidiaphragm, consistent with a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:48.125598+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows homogeneous opacity in the right lower lung zone with blunting of the right costophrenic angle and obscuration of the right hemidiaphragm, consistent with a right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:49.099668+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:49.099668+00:00",
+        "feedback_released_at": "2026-11-27T11:20:49.100981+00:00",
+        "utc": "2026-11-27T11:20:49.102443+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "joint",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 514,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via laterality markers before interpreting findings, since left/right confusion is a common failure mode. One approach that worked involved comparing the contralateral side to confirm a unilateral abnormality, checking that the opposite side showed normal anatomy.",
+        "utc": "2026-11-27T11:20:36.578654+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"chest_xray_expert\",\"args\":{\"question\":\"Which finding is in this chest X-ray? A. left pleural effusion B. right pleural effusion\"}}],\"reason\":\"To obtain a focused expert interpretation of the chest X-ray to determine the side of the pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:36.585412+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"LT\" (Left) in the upper right corner of the image, which corresponds to the patient's left side. This confirms standard radiological orientation where the right side of the image is the patient's left and the left side of the image is the patient's right.\n2.  **Findings**: There is significant opacification of the entire right hemithorax (left side of the image). The right lung field is completely white out, obscuring the diaphragm and heart border. This appearance is characteristic of a large pleural effusion causing compressive atelectasis of the underlying lung.\n3.  **Contrast**: The left hemithorax (right side of the image) shows a relatively normal lung field with visible vascular markings and a sharp costophrenic angle, although there may be minimal blunting, it is clearly not the site of the major pathology.\n4.  **Conclusion**: The dense opacity is on the patient's right side. Therefore, the finding is a right pleural effusion. The provided tool output also identified this as \"B. right pleural effusion\".\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray demonstrates complete opacification of the right hemithorax with loss of the right hemidiaphragm and heart border, consistent with a large right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:37.626698+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows complete opacification of the right hemithorax, consistent with a large right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:40.609935+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {
+            "question": "Which finding is in this chest X-ray? A. left pleural effusion B. right pleural effusion"
+          },
+          "tool": "chest_xray_expert",
+          "utc": "2026-11-27T11:20:37.621540+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "response": "B. right pleural effusion",
+              "model": "StanfordAIMI/CheXagent-8b",
+              "revision": "4934e91451945c8218c267aae9c34929a7677829",
+              "backend_output_tokens": 8
+            },
+            {
+              "image_paths": [
+                "CXR509_IM-2125-1001.png"
+              ],
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 0.23570076562464237,
+          "derived_images": []
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows complete opacification of the right hemithorax, consistent with a large right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:41.512640+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:41.512640+00:00",
+        "feedback_released_at": "2026-11-27T11:20:41.513969+00:00",
+        "utc": "2026-11-27T11:20:41.515326+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "xraydar",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 470,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via visible markers and anatomical landmarks before assessing laterality. One approach that worked involved systematically comparing both sides, describing the abnormal side while confirming the normal side's appearance.",
+        "utc": "2026-11-27T11:20:59.098952+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To obtain a grounded radiology report and specific localization of the pleural effusion to determine laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:59.103447+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"LT\" (Left) in the upper right corner, indicating that the patient's left side is on the right side of the image. Consequently, the left side of the image corresponds to the patient's right side.\n2.  **Findings**: There is extensive opacification (whiteness) of the entire right hemithorax (left side of the image). This opacity obscures the right heart border and the right hemidiaphragm. While there are multiple findings including subcutaneous emphysema and a pneumothorax, the dense consolidation/opacity filling the lung field is characteristic of a significant pleural effusion or complete lung collapse (atelectasis), often referred to as a \"white-out\". In the context of the provided options, this finding localizes to the right side.\n3.  **Contrast**: The left lung (right side of the image) appears relatively clear with visible vascular markings and a sharp costophrenic angle, ruling out a significant left pleural effusion.\n\nTherefore, the finding is a right pleural effusion.\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray shows complete opacification of the right hemithorax (patient's right, image left), consistent with a large right pleural effusion, while the left lung remains clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:13.775229+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows complete opacification of the right hemithorax (image left), consistent with a large right pleural effusion, while the left lung remains clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:22:22.780179+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:21:40.758497+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Endotracheal tube tip at the level of the clavicles.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.005,
+                      0.505,
+                      0.275
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.004761904761904762,
+                      0.50390625,
+                      0.27380952380952384
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      2.0,
+                      258.0,
+                      115.00000000000001
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Right subclavian catheter tip at the cavoatrial junction.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.125,
+                      0.445,
+                      0.615
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.12380952380952381,
+                      0.453125,
+                      0.6142857142857143
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      52.0,
+                      232.0,
+                      258.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left-sided chest tube with the tip at the apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.125,
+                      0.985,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.486328125,
+                      0.12380952380952381,
+                      0.896484375,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      249.0,
+                      52.0,
+                      459.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Extensive subcutaneous emphysema.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.005,
+                      0.035,
+                      0.995,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.09375,
+                      0.03333333333333333,
+                      0.904296875,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      48.0,
+                      14.0,
+                      463.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Pneumothorax at the right lung apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.115,
+                      0.425,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.11428571428571428,
+                      0.4375,
+                      0.7738095238095238
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      48.0,
+                      224.0,
+                      325.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Patchy infiltrates in the right lung.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.165,
+                      0.425,
+                      0.805
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.16428571428571428,
+                      0.4375,
+                      0.8047619047619048
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      69.0,
+                      224.0,
+                      338.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left lung is clear.",
+                "boxes": []
+              }
+            ],
+            "report": "Endotracheal tube tip at the level of the clavicles. Right subclavian catheter tip at the cavoatrial junction. Left-sided chest tube with the tip at the apex. Extensive subcutaneous emphysema. Pneumothorax at the right lung apex. Patchy infiltrates in the right lung. Left lung is clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet, no question/options/answer/feedback consulted.",
+              "sheet": 3,
+              "annotation_id": "V0157",
+              "recorded_asset_id": "7367a5e3a13ac799c7a2e160147a8730cf2ea11d0b5bec75d812dbc5198611f6",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 6,
+            "generated_tokens": 141,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 40.58682697452605,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:22:13.767127+00:00",
+          "status": "failed",
+          "observation": null,
+          "error": "r54_phrase_incomplete_or_non_eos_or_original_failure",
+          "cache_hit": false,
+          "elapsed_s": 33.00349874421954
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows complete opacification of the right hemithorax (image left), consistent with a large right pleural effusion, while the left lung remains clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:22:23.847732+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 1
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:22:23.847732+00:00",
+        "feedback_released_at": "2026-11-27T11:22:23.854431+00:00",
+        "utc": "2026-11-27T11:22:23.856492+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 2,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 441,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from comparing the relevant anatomical landmark on each side and noting the defining visual sign plus corroborating evidence. One approach that worked was explicitly contrasting both sides before committing to the lateralized option.",
+        "utc": "2026-11-27T11:20:35.617864+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right hemithorax shows dense opacification with blunting of the right costophrenic angle, consistent with a right pleural effusion, while the left costophrenic angle appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:35.621482+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right hemithorax shows dense opacification with blunting of the right costophrenic angle, consistent with a right pleural effusion, while the left costophrenic angle appears clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:37.264386+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:37.264386+00:00",
+        "feedback_released_at": "2026-11-27T11:20:37.265467+00:00",
+        "utc": "2026-11-27T11:20:37.266564+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 470,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing each candidate region against defining visual criteria, using the contralateral side as a normal reference for contrast. One approach that worked involved citing the hallmark sign distinguishing the finding to justify the selection.",
+        "utc": "2026-11-27T11:20:45.703297+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Right hemithorax shows basilar opacity with blunted costophrenic angle and meniscus, consistent with right pleural effusion; left costophrenic angle is clearer.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:45.710963+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Right hemithorax shows basilar opacity with blunted costophrenic angle and meniscus, consistent with right pleural effusion; left costophrenic angle is clearer.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:47.031527+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:47.031527+00:00",
+        "feedback_released_at": "2026-11-27T11:20:47.032669+00:00",
+        "utc": "2026-11-27T11:20:47.033961+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "joint",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 454,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation via anatomical landmarks before assigning laterality to a finding. One approach that worked involved localizing the abnormality by anatomical position and matching visual evidence to the correct diagnostic label.",
+        "utc": "2026-11-27T11:20:36.764968+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Right lower lung field shows blunting/opacity consistent with a right pleural effusion, while the left costophrenic angle appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:36.770321+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Right lower lung field shows blunting/opacity consistent with a right pleural effusion, while the left costophrenic angle appears clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:39.324630+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:39.324630+00:00",
+        "feedback_released_at": "2026-11-27T11:20:39.325694+00:00",
+        "utc": "2026-11-27T11:20:39.326725+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "xraydar",
+      "ordinal": 2,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 426,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first confirming image orientation conventions before assigning laterality to a finding. One approach that worked involved describing the abnormality's location and appearance, then mapping it to the correct side.",
+        "utc": "2026-11-27T11:20:48.394022+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are on the patient's right side, consistent with a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:20:48.399699+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are on the patient's right side, consistent with a right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:20:49.077892+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:20:49.077892+00:00",
+        "feedback_released_at": "2026-11-27T11:20:49.078940+00:00",
+        "utc": "2026-11-27T11:20:49.080074+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 13,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 529,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from delegating to a specialized imaging tool that reports orientation markers and compares findings against the contralateral side before selecting an option. One approach that worked involved verifying anatomical orientation via visible image metadata to resolve lateralization ambiguity prior to finalizing the answer.",
+        "utc": "2026-11-27T05:31:20.751437+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to localize any pleural effusion and verify orientation before selecting the answer.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:31:20.755147+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the chest X-ray analysis:\n\n1.  **Orientation**: The image contains an \"LT\" marker in the upper right corner, indicating that the right side of the image corresponds to the patient's left side. Conversely, the left side of the image is the patient's right side.\n2.  **Findings**:\n    *   **Patient's Right Side (Image Left)**: There is extensive opacification of the right hemithorax. The report notes \"Patchy infiltrates in the right lung,\" \"Pneumothorax at the right lung apex,\" and \"Extensive subcutaneous emphysema.\" While there is significant pathology here, the primary description focuses on infiltrates and air (pneumothorax) rather than a fluid collection typical of a simple pleural effusion, although complex effusions can look similar. However, the question asks to choose between left and right pleural effusion.\n    *   **Patient's Left Side (Image Right)**: The left lung field appears relatively clear with normal vascular markings. There is no evidence of a large pleural effusion blunting the costophrenic angle or obscuring the diaphragm on this side.\n3.  **Re-evaluating the Options**: The options are \"left pleural effusion\" and \"right pleural effusion\". Looking closely at the right side (image left), there is a dense opacity. In many clinical contexts involving trauma or post-procedural states (indicated by tubes), this could represent a hemothorax or complicated effusion. However, let's look for specific signs of effusion. A classic sign is blunting of the costophrenic angle. On the right side (image left), the lower zone is opaque. On the left side (image right), the costophrenic angle is sharp.\n    *   Wait, let's look closer at the provided options vs findings. The MAIRA report says \"Left lung is clear.\" It identifies \"Patchy infiltrates in the right lung.\" It does not explicitly state \"pleural effusion\". However, often \"opacification\" in these multiple-choice questions might refer to the most obvious abnormality. Let's re-read the prompt's implied logic. Usually, if one side is clearly affected and the other is clear, the answer lies with the affected side. The right side (patient's right) has major pathology. The left side is clear. Therefore, if a pleural effusion were present, it would be on the right.\n    *   Let's check for subtle signs. Is there a meniscus? The opacity on the right is quite homogeneous. It could be consolidation or effusion. Given the binary choice, and the fact that the left lung is explicitly described as clear, the finding must be on the right.\n\nTherefore, the finding is on the right side.\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray shows significant opacification and pathology in the right hemithorax (patient's right, image left), including infiltrates and potential fluid accumulation, while the left lung is described as clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:31:31.125741+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows significant opacification of the right hemithorax (patient's right, image left) with patchy infiltrates and potential fluid, while the left lung is clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:31:36.388039+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T05:31:31.119310+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Endotracheal tube tip at the level of the clavicles.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.005,
+                      0.505,
+                      0.275
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.004761904761904762,
+                      0.50390625,
+                      0.27380952380952384
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      2.0,
+                      258.0,
+                      115.00000000000001
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Right subclavian catheter tip at the cavoatrial junction.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.125,
+                      0.445,
+                      0.615
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.12380952380952381,
+                      0.453125,
+                      0.6142857142857143
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      52.0,
+                      232.0,
+                      258.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left-sided chest tube with the tip at the apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.125,
+                      0.985,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.486328125,
+                      0.12380952380952381,
+                      0.896484375,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      249.0,
+                      52.0,
+                      459.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Extensive subcutaneous emphysema.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.005,
+                      0.035,
+                      0.995,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.09375,
+                      0.03333333333333333,
+                      0.904296875,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      48.0,
+                      14.0,
+                      463.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Pneumothorax at the right lung apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.115,
+                      0.425,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.11428571428571428,
+                      0.4375,
+                      0.7738095238095238
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      48.0,
+                      224.0,
+                      325.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Patchy infiltrates in the right lung.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.165,
+                      0.425,
+                      0.805
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.16428571428571428,
+                      0.4375,
+                      0.8047619047619048
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      69.0,
+                      224.0,
+                      338.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left lung is clear.",
+                "boxes": []
+              }
+            ],
+            "report": "Endotracheal tube tip at the level of the clavicles. Right subclavian catheter tip at the cavoatrial junction. Left-sided chest tube with the tip at the apex. Extensive subcutaneous emphysema. Pneumothorax at the right lung apex. Patchy infiltrates in the right lung. Left lung is clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet, no question/options/answer/feedback consulted.",
+              "sheet": 3,
+              "annotation_id": "V0157",
+              "recorded_asset_id": "7367a5e3a13ac799c7a2e160147a8730cf2ea11d0b5bec75d812dbc5198611f6",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 6,
+            "generated_tokens": 141,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 8.180654540657997,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows significant opacification of the right hemithorax (patient's right, image left) with patchy infiltrates and potential fluid, while the left lung is clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T05:31:37.176587+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 1,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T05:31:37.176587+00:00",
+        "feedback_released_at": "2026-11-27T05:31:37.178557+00:00",
+        "utc": "2026-11-27T05:31:37.180547+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 13,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 466,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation via markers or anatomical landmarks before assessing laterality-dependent findings. One approach that worked involved cross-validating visual observations against overlay or metadata cues to confirm the correct side.",
+        "utc": "2026-11-27T05:48:27.561659+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains text \"LT\" and \"SMH\" in the upper right corner, which typically indicates the patient's left side is on that side of the image (standard radiological convention where the viewer looks at the patient from the feet, so the patient's left is on the viewer's right). Additionally, the cardiac silhouette (heart) is visible on the left side of the image (patient's right), confirming standard orientation.\n2.  **Findings**: There is a significant opacity (whiteness) in the lower half of the lung field on the right side of the image. This corresponds to the patient's **left** hemithorax.\n3.  **Pathology**: The opacity obscures the left costophrenic angle and the left hemidiaphragm, creating a meniscus sign typical of fluid accumulation. This finding is consistent with a pleural effusion. The right lung field (on the left side of the image) appears relatively clear by comparison.\n4.  **Conclusion**: The pathology is located on the patient's left side. Therefore, the finding is a left pleural effusion.\n\n{\"answer\":\"A. left pleural effusion\",\"reason\":\"The chest X-ray shows a large opacity in the left hemithorax (right side of the image) with blunting of the costophrenic angle, characteristic of a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:48:27.567495+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"A\",\"reason\":\"The chest X-ray shows a large opacity in the left hemithorax with blunting of the costophrenic angle, consistent with a left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:48:42.612523+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "A",
+        "reason": "The chest X-ray shows a large opacity in the left hemithorax with blunting of the costophrenic angle, consistent with a left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T05:48:44.536247+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8567c54a, text:2722f89e, text:5d274156, text:62e376b9, text:ba3d3099",
+        "prediction_saved_at": "2026-11-27T05:48:44.536247+00:00",
+        "feedback_released_at": "2026-11-27T05:48:44.538623+00:00",
+        "utc": "2026-11-27T05:48:49.441688+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 13,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 470,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing symmetric regions on both sides to identify which side shows the abnormality. One approach that worked before involved using lateral orientation cues to confirm left-right positioning when distinguishing between lateralized options.",
+        "utc": "2026-11-27T05:27:33.292491+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The right hemithorax shows increased basal opacity with blunting of the right costophrenic angle, consistent with a right pleural effusion, while the left costophrenic angle is relatively clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:27:33.296615+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The right hemithorax shows increased basal opacity with blunting of the right costophrenic angle, consistent with a right pleural effusion, while the left costophrenic angle is relatively clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T05:27:34.686276+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T05:27:34.686276+00:00",
+        "feedback_released_at": "2026-11-27T05:27:34.687194+00:00",
+        "utc": "2026-11-27T05:27:34.688343+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 13,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 461,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from establishing anatomical orientation conventions before interpreting lateralized findings in radiological images. One approach that worked involved mapping image orientation to patient anatomy prior to matching observations to the available options.",
+        "utc": "2026-11-27T05:47:04.066191+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Right hemithorax shows dense opacification with blunting of the right costophrenic angle, consistent with right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T05:47:04.072943+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Right hemithorax shows dense opacification with blunting of the right costophrenic angle, consistent with right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T05:47:23.236391+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T05:47:23.236391+00:00",
+        "feedback_released_at": "2026-11-27T05:47:23.237548+00:00",
+        "utc": "2026-11-27T05:47:23.238880+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 4,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 453,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation markers before assigning laterality to a finding, since convention can invert perceived sides. One approach that worked involved cross-checking tool outputs against direct visual evidence of the relevant region.",
+        "utc": "2026-11-27T09:41:33.273763+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To obtain a grounded radiology report and localized evidence for pleural effusion, verifying laterality against orientation markers.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:41:33.277387+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains an \"LT\" marker in the upper right corner, indicating that the patient's left side is on the right side of the image. Conversely, the patient's right side is on the left side of the image.\n2.  **Findings**: There is a large area of opacity (whiteness) occupying the majority of the hemithorax on the left side of the image (patient's right). This opacity obscures the right heart border and the right hemidiaphragm, which are classic signs of pathology in the right lung or pleural space.\n3.  **Specific Pathology**: The MAIRA-2 report identifies \"Patchy infiltrates in the right lung\" and notes that the \"Left lung is clear.\" While the report mentions a pneumothorax at the *right* apex, the dominant finding causing the significant opacification of the lower and mid-zones is consistent with a right-sided process. In the context of the options provided (pleural effusion), the dense opacity on the patient's right side corresponds to a right pleural effusion (or extensive consolidation mimicking it). The left lung field appears relatively lucent and clear.\n\nTherefore, the finding is on the right side.\n\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray shows extensive opacity in the right hemithorax (left side of the image), obscuring the right heart border and diaphragm, while the left lung is clear, indicating a right-sided pleural abnormality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:42:08.596560+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows extensive opacity in the right hemithorax (left side of the image) obscuring the right heart border and diaphragm, consistent with a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:42:12.749122+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:41:42.954763+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "Endotracheal tube tip at the level of the clavicles.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.385,
+                      0.005,
+                      0.505,
+                      0.275
+                    ],
+                    "original_normalized": [
+                      0.404296875,
+                      0.004761904761904762,
+                      0.50390625,
+                      0.27380952380952384
+                    ],
+                    "original_pixels": [
+                      207.0,
+                      2.0,
+                      258.0,
+                      115.00000000000001
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Right subclavian catheter tip at the cavoatrial junction.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.125,
+                      0.445,
+                      0.615
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.12380952380952381,
+                      0.453125,
+                      0.6142857142857143
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      52.0,
+                      232.0,
+                      258.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left-sided chest tube with the tip at the apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.485,
+                      0.125,
+                      0.985,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.486328125,
+                      0.12380952380952381,
+                      0.896484375,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      249.0,
+                      52.0,
+                      459.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Extensive subcutaneous emphysema.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.005,
+                      0.035,
+                      0.995,
+                      0.995
+                    ],
+                    "original_normalized": [
+                      0.09375,
+                      0.03333333333333333,
+                      0.904296875,
+                      0.9928571428571429
+                    ],
+                    "original_pixels": [
+                      48.0,
+                      14.0,
+                      463.0,
+                      417.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Pneumothorax at the right lung apex.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.115,
+                      0.425,
+                      0.775
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.11428571428571428,
+                      0.4375,
+                      0.7738095238095238
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      48.0,
+                      224.0,
+                      325.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Patchy infiltrates in the right lung.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.055,
+                      0.165,
+                      0.425,
+                      0.805
+                    ],
+                    "original_normalized": [
+                      0.134765625,
+                      0.16428571428571428,
+                      0.4375,
+                      0.8047619047619048
+                    ],
+                    "original_pixels": [
+                      69.0,
+                      69.0,
+                      224.0,
+                      338.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Left lung is clear.",
+                "boxes": []
+              }
+            ],
+            "report": "Endotracheal tube tip at the level of the clavicles. Right subclavian catheter tip at the cavoatrial junction. Left-sided chest tube with the tip at the apex. Extensive subcutaneous emphysema. Pneumothorax at the right lung apex. Patchy infiltrates in the right lung. Left lung is clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet, no question/options/answer/feedback consulted.",
+              "sheet": 3,
+              "annotation_id": "V0157",
+              "recorded_asset_id": "7367a5e3a13ac799c7a2e160147a8730cf2ea11d0b5bec75d812dbc5198611f6",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 6,
+            "generated_tokens": 141,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 8.480491228401661,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:42:08.589436+00:00",
+          "status": "failed",
+          "observation": null,
+          "error": "r54_phrase_incomplete_or_non_eos_or_original_failure",
+          "cache_hit": false,
+          "elapsed_s": 25.62955886311829
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows extensive opacity in the right hemithorax (left side of the image) obscuring the right heart border and diaphragm, consistent with a right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:42:13.693074+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 1
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T09:42:13.693074+00:00",
+        "feedback_released_at": "2026-11-27T09:42:13.696596+00:00",
+        "utc": "2026-11-27T09:42:13.698781+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "box",
+      "ordinal": 4,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 483,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation and laterality markers before assigning side-specific findings. One approach that worked before involved systematically scanning anatomical zones and correlating visual findings with classic diagnostic signs prior to committing to an answer.",
+        "utc": "2026-11-27T10:01:54.456383+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a marker \"LT\" (Left) near the patient's left shoulder, confirming standard radiological orientation where the right side of the image corresponds to the patient's left side and vice versa.\n2.  **Right Hemithorax (Image Left)**: There is significant opacification of the entire right lung field. The costophrenic angle is obliterated, and there is a meniscus sign visible along the lateral chest wall, which are classic signs of a pleural effusion. Additionally, there appear to be medical devices (tubes/lines) in this region.\n3.  **Left Hemithorax (Image Right)**: The left lung field appears relatively clear with a sharp costophrenic angle, indicating no significant pleural effusion on that side.\n\nTherefore, the finding is a left pleural effusion.\n\n{\"answer\":\"A. left pleural effusion\",\"reason\":\"The chest X-ray shows opacification of the right hemithorax (patient's right) with blunting of the costophrenic angle and a meniscus sign, consistent with a pleural effusion on the patient's right side; however, looking closely at the provided options and typical exam questions, let's re-evaluate. Wait, looking at the image again: The 'LT' marker is on the top right of the image. In standard PA views, the marker is placed on the patient's left side. This means the right side of the image is the patient's left. The left side of the image is the patient's right. The opacity is on the LEFT side of the image, which corresponds to the PATIENT'S RIGHT. Let me re-read the options. A. left pleural effusion, B. right pleural effusion. The opacity is clearly on the patient's right side (left side of the image). Therefore, it is a right pleural effusion.\"}\n\nCorrection in reasoning step:\n- Marker \"LT\" is on the upper right of the image -> Patient's Left is on the right side of the image.\n- Consequently, Patient's Right is on the left side of the image.\n- The large white opacity (effusion) is on the left side of the image.\n- Therefore, the effusion is on the Patient's Right side.\n\nFinal Answer:\n{\"answer\":\"B. right pleural effusion\",\"reason\":\"The chest X-ray displays a large opacity in the right hemithorax (left side of the image), characterized by blunting of the costophrenic angle and obscuring of the diaphragm, which is diagnostic for a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:01:54.462739+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows significant opacification of the right hemithorax (left side of the image) with blunting of the costophrenic angle, consistent with a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:01:57.663843+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows significant opacification of the right hemithorax (left side of the image) with blunting of the costophrenic angle, consistent with a right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:01:58.539264+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T10:01:58.539264+00:00",
+        "feedback_released_at": "2026-11-27T10:01:58.540511+00:00",
+        "utc": "2026-11-27T10:01:58.541795+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 4,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 459,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks involving lateralized findings have benefited from first establishing the anatomical side of the abnormality before matching it to an option. One approach that worked was confirming the spatial location aligns with the chosen laterality to avoid left/right reversal.",
+        "utc": "2026-11-27T09:40:44.034516+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The opacity and blunting are on the patient's right side, consistent with a right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:40:44.038620+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The opacity and blunting are on the patient's right side, consistent with a right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:40:44.907744+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T09:40:44.907744+00:00",
+        "feedback_released_at": "2026-11-27T09:40:44.909108+00:00",
+        "utc": "2026-11-27T09:40:44.910330+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "box",
+      "ordinal": 4,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 441,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation conventions before attributing findings to a side. One approach that worked involved verifying the anatomical side of an abnormality matches the selected option to avoid left/right confusion.",
+        "utc": "2026-11-27T10:01:14.142818+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Right lower lung field shows blunting/opacity consistent with a right pleural effusion, while the left costophrenic angle appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:01:14.147981+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Right lower lung field shows blunting/opacity consistent with a right pleural effusion, while the left costophrenic angle appears clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:01:15.279773+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T10:01:15.279773+00:00",
+        "feedback_released_at": "2026-11-27T10:01:15.281175+00:00",
+        "utc": "2026-11-27T10:01:15.282501+00:00"
+      }
+    }
+  ],
+  "question": "Which finding is in this chest X-ray?",
+  "options": {
+    "A": "left pleural effusion",
+    "B": "right pleural effusion"
+  },
+  "reference": "A"
+}

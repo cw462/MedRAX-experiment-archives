@@ -1,0 +1,1930 @@
+{
+  "cohort": "first18",
+  "question_id": "chexbench_openi_0254",
+  "image": "images/openi/images/CXR3614_IM-1787-4001.png",
+  "view": "frontal",
+  "phrase": "small pleural effusion",
+  "xraydar_probability": 0.4975349009037018,
+  "biovil": {
+    "question_id": "chexbench_openi_0254",
+    "view": "frontal",
+    "phrase": "small pleural effusion",
+    "path": "chexbench_openi_0254.png",
+    "size": [
+      420,
+      512
+    ],
+    "p05": -0.2400861144065857,
+    "p95": 0.057183467596769316,
+    "fraction_scored": 0.6263439360119047
+  },
+  "imt": {
+    "question_id": "chexbench_openi_0254",
+    "prompt": "give the accurate bbox of pleural effusion",
+    "boxes": [],
+    "raw_bins": "",
+    "raw_text": "ap upright and lateral views of the chest provided . midline sternotomy wires and mediastinal clips are again noted . overlying ekg leads are present . lung volumes are low limiting assessment . overlying ekg leads somewhat limit the assessment . allowing for this, there is no convincing evidence for pneumonia or edema . no large effusion or pneumothorax is seen . the heart size cannot be assessed . mediastinal contour appears grossly unremarkable . bony structures are intact . no free air below the right hemidiaphragm . limited exam without convincing evidence for pneumonia or edema .",
+    "size": [
+      512,
+      420
+    ]
+  },
+  "runs": [
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 16,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 472,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation using explicit markers before interpreting lateralized findings. One approach that worked was systematically comparing symmetric anatomical regions to localize abnormalities, since side-confusion was the main failure mode.",
+        "utc": "2026-11-27T11:25:25.091663+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"pleural effusion\"}}], \"reason\":\"To obtain a comprehensive visual report and specifically localize pleural effusion findings with coordinates.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:25.095518+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image contains a radiological marker indicating \"L\" (Left) in the upper right corner of the image. In standard medical imaging display conventions, this indicates that the right side of the image corresponds to the patient's left side, and the left side of the image corresponds to the patient's right side.\n2.  **Visual Findings**: There is significant opacification (whiteness) at the base of the lung field on the left side of the image. This opacity obscures the costophrenic angle and the hemidiaphragm on that side. This appearance is characteristic of a pleural effusion (fluid in the pleural space).\n3.  **Localization**: Since the opacity is on the left side of the image, and the image orientation marker confirms the left side of the image represents the patient's right side, the finding is located in the right hemithorax.\n4.  **Tool Evidence**: The `xray_phrase_grounding` tool localized a \"Pleural effusion\" finding with a bounding box centered on this area of opacity on the left side of the image (patient's right).\n\nTherefore, the finding is a small right pleural effusion.\n\n{\"answer\":\"A. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side (left side of the image), consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:31.358234+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"A\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side (left side of the image), consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:33.916526+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:25:28.324638+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.9365270379930735,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:25:31.353329+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "Pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.115,
+                        0.455,
+                        0.395,
+                        0.665
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.18359375,
+                        0.45476190476190476,
+                        0.412109375,
+                        0.6642857142857143
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_ed51eca6.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 3.0251155383884907,
+          "derived_images": [
+            "grounding_ed51eca6.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "A",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side (left side of the image), consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:25:34.694464+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:25:34.694464+00:00",
+        "feedback_released_at": "2026-11-27T11:25:34.696392+00:00",
+        "utc": "2026-11-27T11:25:34.698195+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 462,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing spatial orientation from image markers before comparing bilateral structures for asymmetry. One approach that worked involved describing findings by patient side rather than viewer side, confirmed through contralateral comparison.",
+        "utc": "2026-11-27T11:24:01.967629+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small pleural effusion\"}}], \"reason\":\"Obtain a grounded radiology report and specific phrase localization to verify the presence and side of any pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:01.973169+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image displays a \"R\" marker in the upper right corner, indicating that this side corresponds to the patient's right side. Consequently, the left side of the image represents the patient's left hemithorax.\n2.  **Visual Findings**: There is significant opacification (whiteness) at the base of the lung on the left side of the image (patient's left). This opacity obscures the left hemidiaphragm and the costophrenic angle, which is characteristic of fluid accumulation in the pleural space. In contrast, the right lung base (right side of the image) appears relatively clearer with a visible diaphragm.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"small pleural effusion\" specifically to the lower zone of the patient's left lung (viewer's right), confirming the presence of the finding on that side.\n\nTherefore, the finding present is a small left pleural effusion.\n\n{\"answer\":\"B. small left pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and opacification of the left lung base consistent with a small pleural effusion, while the right side appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:05.759405+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and opacification of the left lung base consistent with a small pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:08.089683+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:24:04.206699+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.4940738249570131,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:24:05.753133+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.525,
+                        0.935,
+                        0.665
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.5238095238095238,
+                        0.85546875,
+                        0.6642857142857143
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_4102ab68.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.5423193722963333,
+          "derived_images": [
+            "grounding_4102ab68.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the left costophrenic angle and opacification of the left lung base consistent with a small pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:24:09.086235+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:c98d956e, text:ff5c835f, text:836de36c, text:f336a688, text:3e24de17",
+        "prediction_saved_at": "2026-11-27T11:24:09.086235+00:00",
+        "feedback_released_at": "2026-11-27T11:24:09.087991+00:00",
+        "utc": "2026-11-27T11:24:12.131103+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "joint",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 473,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first confirming image orientation and anatomical landmarks before comparing bilateral structures for abnormalities. One approach that worked involved explicitly separating image-side from patient-side to reduce left/right confusion when lateralizing findings.",
+        "utc": "2026-11-27T11:24:10.789780+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\": {}}, {\"tool\": \"xray_phrase_grounding\", \"args\": {\"phrase\": \"small pleural effusion\"}}], \"reason\": \"To obtain a grounded report and verify the presence/absence of pleural effusion with localized evidence.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:10.796213+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The radiographic marker \"R\" is visible in the upper right corner of the image, indicating that this side corresponds to the patient's right side.\n2.  **Visual Findings**: There is significant opacification (whiteness) at the base of the lung on the left side of the image (patient's right). This opacity obscures the right hemidiaphragm and the costophrenic angle, which is a classic sign of fluid accumulation in the pleural space (pleural effusion).\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"small pleural effusion\" with a bounding box over the area of opacity on the patient's right side (image right). The `maira2_grounded_report` also identified findings consistent with pathology in this region, although it noted clear lung fields generally, the specific grounding for effusion points to the right.\n4.  **Conclusion**: The finding is a small pleural effusion on the patient's right side.\n\n{\"answer\":\"A. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side (indicated by the 'R' marker), consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:15.041179+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"A\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:24:17.689405+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:24:13.466404+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.7633477337658405,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:24:15.033628+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.525,
+                        0.935,
+                        0.665
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.5238095238095238,
+                        0.85546875,
+                        0.6642857142857143
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_c751b833.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.5633045341819525,
+          "derived_images": [
+            "grounding_c751b833.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "A",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and basal opacity on the patient's right side, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:24:18.468820+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:24:18.468820+00:00",
+        "feedback_released_at": "2026-11-27T11:24:18.471048+00:00",
+        "utc": "2026-11-27T11:24:18.472953+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "qwen",
+      "condition": "xraydar",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 471,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks involving lateralized findings have benefited from first establishing spatial orientation through available markers and anatomical landmarks. One approach that worked before was verifying patient-side conventions prior to comparing options, which helped avoid laterality errors.",
+        "utc": "2026-11-27T11:25:23.455924+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small left pleural effusion\"}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small right pleural effusion\"}}], \"reason\":\"To obtain a grounded report and verify the presence/absence of small pleural effusions on both sides with original-image coordinates.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:23.458991+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image contains a radiographic marker indicating \"L\" (Left) on the right side of the image, which corresponds to the patient's left side. This confirms standard frontal view orientation where the viewer's right is the patient's left.\n2.  **Findings**: There is blunting of the costophrenic angle and increased opacity in the lower lung zone on the viewer's right side (patient's left). This appearance is characteristic of a pleural effusion.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool specifically localized the phrase \"small left pleural effusion\" with a bounding box over this area of opacity on the patient's left side. Conversely, the grounding for \"small right pleural effusion\" did not identify a corresponding finding on the patient's right side (viewer's left), where the costophrenic angle appears sharper.\n\nTherefore, the finding present is a small left pleural effusion.\n\n{\"answer\":\"B. small left pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and basal opacity consistent with a small pleural effusion on the patient's left side, as confirmed by visual inspection and phrase grounding.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:32.937646+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and basal opacity consistent with a small pleural effusion on the patient's left side.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:25:43.466628+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T11:25:26.865864+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.478998802602291,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:25:29.906046+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.465,
+                        0.995,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.4642857142857143,
+                        0.904296875,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_67f7a606.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 3.0349582210183144,
+          "derived_images": [
+            "grounding_67f7a606.png"
+          ]
+        },
+        {
+          "ordinal": 3,
+          "args": {
+            "phrase": "small right pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T11:25:32.928938+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small right pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.115,
+                        0.445,
+                        0.395,
+                        0.665
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.18359375,
+                        0.44285714285714284,
+                        0.412109375,
+                        0.6642857142857143
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_8c33dbe0.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 3.0192975718528032,
+          "derived_images": [
+            "grounding_8c33dbe0.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the left costophrenic angle and basal opacity consistent with a small pleural effusion on the patient's left side.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:25:44.547722+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 3,
+        "tool_calls": 3,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:2544e153, text:36d126a3, text:62a40386, text:16ee6170, text:8a3b7bd8",
+        "prediction_saved_at": "2026-11-27T11:25:44.547722+00:00",
+        "feedback_released_at": "2026-11-27T11:25:44.549817+00:00",
+        "utc": "2026-11-27T11:25:47.707584+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 16,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 470,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from explicitly mapping image-side to patient-side using anatomical markers before attributing a lateralized finding. One approach that worked was confirming laterality conventions first, then matching the visual signature of the abnormality to the correct side.",
+        "utc": "2026-11-27T11:21:41.947362+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Blunting of the left costophrenic angle with a small meniscus is consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:41.950776+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Blunting of the left costophrenic angle with a small meniscus is consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:42.594409+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:d91374d6, text:108bfbbf, text:26222cdb, text:82131e9e, text:a2ce8230",
+        "prediction_saved_at": "2026-11-27T11:21:42.594409+00:00",
+        "feedback_released_at": "2026-11-27T11:21:42.596015+00:00",
+        "utc": "2026-11-27T11:21:45.329511+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 460,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing symmetric anatomical landmarks to identify which side shows an asymmetric finding. One approach that worked involved using standard radiological orientation to map the observed abnormality to the correct laterality option.",
+        "utc": "2026-11-27T11:21:54.215127+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Blunting of the left costophrenic angle is visible, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:54.219952+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Blunting of the left costophrenic angle is visible, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:55.685701+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:3434f793, text:28c991a2, text:57eaee43, text:9933c046, text:58622cfd",
+        "prediction_saved_at": "2026-11-27T11:21:55.685701+00:00",
+        "feedback_released_at": "2026-11-27T11:21:55.686855+00:00",
+        "utc": "2026-11-27T11:21:59.040015+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "joint",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "biovil",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 507,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing symmetric structures on both sides to spot asymmetric abnormalities, then using descriptive imaging signs as evidence for the affected side. One approach that worked involved contrasting the abnormal side against the normal side to justify the chosen lateralized label.",
+        "utc": "2026-11-27T11:21:57.681954+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Blunting of the left costophrenic angle with asymmetric left basilar opacity is consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:57.686667+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Blunting of the left costophrenic angle with asymmetric left basilar opacity is consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:59.667888+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:f3aad7d0, text:8f49ae46, text:dd6fb167, text:0bfe4e39, text:2f7a9da4",
+        "prediction_saved_at": "2026-11-27T11:21:59.667888+00:00",
+        "feedback_released_at": "2026-11-27T11:21:59.669180+00:00",
+        "utc": "2026-11-27T11:22:02.740857+00:00"
+      }
+    },
+    {
+      "batch": "paired18",
+      "model": "deepseek",
+      "condition": "xraydar",
+      "ordinal": 16,
+      "supplied": [
+        "original",
+        "xraydar_probability"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 459,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing anatomical orientation to distinguish patient left from right before evaluating findings. One approach that worked involved comparing symmetric landmarks on both sides to confirm a unilateral abnormality against its distractor.",
+        "utc": "2026-11-27T11:21:54.479610+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"A\",\"reason\":\"Blunting of the right costophrenic angle with a small right-sided opacity is consistent with a small right pleural effusion, while the left costophrenic angle appears sharper.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T11:21:54.483892+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "A",
+        "reason": "Blunting of the right costophrenic angle with a small right-sided opacity is consistent with a small right pleural effusion, while the left costophrenic angle appears sharper.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T11:21:55.507227+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T11:21:55.507227+00:00",
+        "feedback_released_at": "2026-11-27T11:21:55.508767+00:00",
+        "utc": "2026-11-27T11:21:55.510035+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 113,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 444,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from verifying image orientation and anatomical landmarks before attributing lateralized findings. One approach that worked involved comparing symmetric structures to localize abnormalities after establishing the orientation convention.",
+        "utc": "2026-11-27T09:24:00.797456+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to localize any pleural effusion and verify laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:24:00.802185+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"calls\":[{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"small left pleural effusion\"}}],\"reason\":\"Verify presence and laterality of a small pleural effusion using phrase grounding on the original image.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:24:06.795959+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The \"L\" marker in the upper right corner of the image indicates that this is the patient's left side, confirming standard radiological orientation (right side of the image corresponds to the patient's left).\n2.  **Findings**: There is blunting of the left costophrenic angle and increased opacity in the left lower lung zone, which are characteristic signs of a pleural effusion. The right costophrenic angle appears sharp and clear.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool specifically localized the phrase \"small left pleural effusion\" with a bounding box over the affected area on the patient's left side.\n\nTherefore, the finding present in this chest X-ray is a small left pleural effusion.\n\n{\"answer\":\"B. small left pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and increased opacity in the left lower lung field, consistent with a small left pleural effusion, as confirmed by visual inspection and grounding tool localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:24:19.523110+00:00"
+        },
+        {
+          "step_index": 3,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray demonstrates blunting of the left costophrenic angle and increased opacity in the left lower lung zone, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:24:22.689434+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:24:06.792653+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 5.075225740671158,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:24:19.505383+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.465,
+                        0.995,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.4642857142857143,
+                        0.904296875,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_87eed97f.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 2.01529274135828,
+          "derived_images": [
+            "grounding_87eed97f.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray demonstrates blunting of the left costophrenic angle and increased opacity in the left lower lung zone, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:24:23.815952+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 4,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:b20ac66e, text:b63f1114, text:245e5c92, text:63df0722, text:3c916273",
+        "prediction_saved_at": "2026-11-27T09:24:23.815952+00:00",
+        "feedback_released_at": "2026-11-27T09:24:23.818009+00:00",
+        "utc": "2026-11-27T09:24:28.662234+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "qwen",
+      "condition": "heatmap",
+      "ordinal": 113,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 486,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from first establishing image orientation and laterality markers before comparing bilateral structures for asymmetric abnormalities. One approach that worked involved localizing findings through relative comparison and cross-validating visual features against the given options.",
+        "utc": "2026-11-27T09:26:45.697391+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Orientation**: The image displays a \"T\" marker in the upper right corner, which typically indicates the patient's left side is on the viewer's right. Therefore, the left side of the image corresponds to the patient's right lung, and the right side of the image corresponds to the patient's left lung.\n2.  **Findings**: There is significant opacification (whiteness) at the base of the left lung (right side of the image). This opacity obscures the left hemidiaphragm and the left heart border, a finding known as the \"silhouette sign.\" This pattern is characteristic of fluid accumulation in the pleural space (pleural effusion) or consolidation in the lower lobe.\n3.  **Comparison**: The right lung base (left side of the image) appears relatively clearer by comparison, although there are some overlying soft tissues. The asymmetry strongly points to pathology on the left side.\n4.  **Conclusion**: The dense opacity at the left lung base consistent with blunting of the costophrenic angle and diaphragmatic obscuration indicates a small left pleural effusion.\n\n{\"answer\":\"small left pleural effusion\",\"reason\":\"The chest X-ray shows increased opacity at the left lung base (viewer's right) with obscuration of the left hemidiaphragm and heart border, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:26:45.702211+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows increased opacity at the left lung base (viewer's right) with obscuration of the left hemidiaphragm and heart border, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:26:48.283271+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows increased opacity at the left lung base (viewer's right) with obscuration of the left hemidiaphragm and heart border, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:26:49.240951+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 2,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:e041bba6, text:2d272695, text:e8d8f4b2, text:aa421c75, text:279dc9fe",
+        "prediction_saved_at": "2026-11-27T09:26:49.240951+00:00",
+        "feedback_released_at": "2026-11-27T09:26:49.242029+00:00",
+        "utc": "2026-11-27T09:26:55.204499+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 113,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 476,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from anchoring on anatomical landmarks and comparing symmetric structures side-by-side before selecting an option. One approach that worked involved using standard radiological orientation to avoid laterality errors when distinguishing between left and right findings.",
+        "utc": "2026-11-27T09:05:16.656727+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a small meniscus, consistent with a small left pleural effusion, while the right costophrenic angle appears clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:05:16.659490+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a small meniscus, consistent with a small left pleural effusion, while the right costophrenic angle appears clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:05:17.256834+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:dd29dcb1, text:9407cfce, text:f392b4c8, text:0c37f9d3, text:3cd92709",
+        "prediction_saved_at": "2026-11-27T09:05:17.256834+00:00",
+        "feedback_released_at": "2026-11-27T09:05:17.258142+00:00",
+        "utc": "2026-11-27T09:05:21.234170+00:00"
+      }
+    },
+    {
+      "batch": "biovil120",
+      "model": "deepseek",
+      "condition": "heatmap",
+      "ordinal": 113,
+      "supplied": [
+        "original",
+        "biovil"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 457,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from verifying laterality via explicit image annotations before matching observed findings to options. One approach that worked involved combining direct visual evidence of the relevant region with an interpretability aid to justify the chosen side.",
+        "utc": "2026-11-27T09:12:17.183397+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"Blunting of the left costophrenic angle with a small left pleural effusion; the right costophrenic angle is relatively clear.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:12:17.188141+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "Blunting of the left costophrenic angle with a small left pleural effusion; the right costophrenic angle is relatively clear.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:12:18.084894+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:8d6e4203, text:5fbb38f7, text:b1bf25e4, text:0defc6ee, text:83d76d81",
+        "prediction_saved_at": "2026-11-27T09:12:18.084894+00:00",
+        "feedback_released_at": "2026-11-27T09:12:18.085977+00:00",
+        "utc": "2026-11-27T09:12:22.510220+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "original",
+      "ordinal": 55,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 466,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from verifying image orientation markers before comparing bilateral structures for asymmetry. One approach that worked involved grounding each candidate finding against localized visual evidence and cross-checking which side matched the observed abnormality.",
+        "utc": "2026-11-27T09:58:53.810801+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\", \"args\":{}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small right pleural effusion\"}}, {\"tool\":\"xray_phrase_grounding\", \"args\":{\"phrase\":\"small left pleural effusion\"}}], \"reason\":\"To obtain a grounded radiology report and localized evidence for both candidate findings.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:58:53.813924+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The \"R\" marker in the top right corner indicates that this is a standard frontal view where the left side of the image corresponds to the patient's right side, and vice versa.\n2.  **Visual Findings**: There is significant opacification (whiteness) at the base of the lung on the left side of the image (patient's right). This opacity obscures the right hemidiaphragm and the costophrenic angle, which is characteristic of a pleural effusion. In contrast, the left lung field (right side of the image) appears relatively clearer with a visible diaphragm.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool localized the phrase \"small right pleural effusion\" to the area of increased density in the patient's right lower lung zone (left side of the image). It did not localize a similar finding for the left side.\n\nTherefore, the finding present is a small right pleural effusion.\n\n{\"answer\":\"A. small right pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:59:02.487865+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "{\"answer\":\"A\",\"reason\":\"The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:59:06.423506+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T09:58:56.556693+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.486969981342554,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small right pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:58:58.231940+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small right pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.115,
+                        0.445,
+                        0.395,
+                        0.665
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.18359375,
+                        0.44285714285714284,
+                        0.412109375,
+                        0.6642857142857143
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_4158c5ba.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.671002522110939,
+          "derived_images": [
+            "grounding_4158c5ba.png"
+          ]
+        },
+        {
+          "ordinal": 3,
+          "args": {
+            "phrase": "small left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T09:59:02.480130+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.465,
+                        0.995,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.4642857142857143,
+                        0.904296875,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_bd65d9b5.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 4.244256595149636,
+          "derived_images": [
+            "grounding_bd65d9b5.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "A",
+        "reason": "The chest X-ray shows blunting of the right costophrenic angle and increased opacity in the right lower lung zone, consistent with a small right pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:59:07.220219+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 3,
+        "tool_calls": 3,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T09:59:07.220219+00:00",
+        "feedback_released_at": "2026-11-27T09:59:07.222361+00:00",
+        "utc": "2026-11-27T09:59:07.224280+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "qwen",
+      "condition": "box",
+      "ordinal": 55,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 458,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from confirming image orientation before comparing bilateral structures, since laterality conventions can affect interpretation. One approach that worked involved systematically comparing both sides to localize asymmetries before selecting an answer.",
+        "utc": "2026-11-27T10:16:49.197712+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"calls\":[{\"tool\":\"maira2_grounded_report\",\"args\":{}}],\"reason\":\"Obtain a grounded radiology report with original-image coordinates to localize any pleural effusion and confirm laterality.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:16:49.202087+00:00"
+        },
+        {
+          "step_index": 1,
+          "response": "{\"calls\":[{\"tool\":\"xray_phrase_grounding\",\"args\":{\"phrase\":\"small left pleural effusion\"}}],\"reason\":\"Verify the presence and laterality of a small pleural effusion using phrase grounding.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:16:51.961262+00:00"
+        },
+        {
+          "step_index": 2,
+          "response": "Based on the analysis of the chest X-ray:\n\n1.  **Image Orientation**: The image displays a \"L\" marker in the upper right corner, which typically indicates the patient's left side is on the viewer's right. This is standard for frontal chest radiographs.\n2.  **Findings**: There is blunting of the costophrenic angle and increased opacity in the lower lung zone on the viewer's right (patient's left). This appearance is characteristic of a pleural effusion.\n3.  **Tool Evidence**: The `xray_phrase_grounding` tool specifically localized the phrase \"small left pleural effusion\" with a bounding box over the area of opacity in the patient's left hemithorax. The `maira2_grounded_report` also noted findings consistent with this, although it primarily highlighted cardiomegaly. The visual evidence of the opacity on the left side supports the diagnosis of a left-sided effusion. There is no corresponding significant finding on the right side to suggest a right pleural effusion.\n\nTherefore, the finding present is a small left pleural effusion.\n\n{\"answer\":\"B. small left pleural effusion\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and basal opacity on the patient's left side, confirmed by phrase grounding localization.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:16:54.437638+00:00"
+        },
+        {
+          "step_index": 3,
+          "response": "{\"answer\":\"B\",\"reason\":\"The chest X-ray shows blunting of the left costophrenic angle and basal opacity on the patient's left side, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:16:57.050274+00:00"
+        }
+      ],
+      "tool_events": [
+        {
+          "ordinal": 1,
+          "args": {},
+          "tool": "maira2_grounded_report",
+          "utc": "2026-11-27T10:16:51.956523+00:00",
+          "status": "completed",
+          "observation": {
+            "analysis_status": "completed",
+            "findings": [
+              {
+                "finding": "The heart size is enlarged.",
+                "boxes": [
+                  {
+                    "model_normalized": [
+                      0.375,
+                      0.325,
+                      0.915,
+                      0.665
+                    ],
+                    "original_normalized": [
+                      0.396484375,
+                      0.3238095238095238,
+                      0.83984375,
+                      0.6642857142857143
+                    ],
+                    "original_pixels": [
+                      203.0,
+                      136.0,
+                      430.0,
+                      279.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "finding": "Lung fields are clear.",
+                "boxes": []
+              }
+            ],
+            "report": "The heart size is enlarged. Lung fields are clear.",
+            "original_size": [
+              512,
+              420
+            ],
+            "view_record": {
+              "modality": "CXR",
+              "view": "frontal",
+              "source": "Assistant visual image-only annotation of original-image contact sheet; no question/options/answer/feedback consulted.",
+              "sheet": 7,
+              "annotation_id": "V0381",
+              "recorded_asset_id": "33635b0ea513d7f764f7e5a0173ac8b0b59c310dbcbb9b78b72637da7349b049",
+              "identity_source": "previously recorded R49 public asset ID; not recomputed",
+              "not_diagnostic_validation": true
+            },
+            "grounded_box_count": 1,
+            "generated_tokens": 25,
+            "reached_token_cap": false,
+            "limitations": "Unverified findings; boxes are model outputs, not independent confirmation. No prior image or history supplied. Findings without boxes are retained."
+          },
+          "cache_hit": false,
+          "elapsed_s": 1.6867495644837618,
+          "derived_images": [
+            "grounded_report.png"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "args": {
+            "phrase": "small left pleural effusion"
+          },
+          "tool": "xray_phrase_grounding",
+          "utc": "2026-11-27T10:16:54.431390+00:00",
+          "status": "completed",
+          "observation": [
+            {
+              "predictions": [
+                {
+                  "phrase": "small left pleural effusion.",
+                  "bounding_boxes": {
+                    "model_coordinates": [
+                      [
+                        0.725,
+                        0.465,
+                        0.995,
+                        0.755
+                      ]
+                    ],
+                    "image_coordinates": [
+                      [
+                        0.68359375,
+                        0.4642857142857143,
+                        0.904296875,
+                        0.7547619047619047
+                      ]
+                    ]
+                  }
+                }
+              ],
+              "visualization_path": "grounding_095d5f2a.png"
+            },
+            {
+              "image_path": "CXR3614_IM-1787-4001.png",
+              "original_size": [
+                512,
+                420
+              ],
+              "model_input_size": [
+                518,
+                518
+              ],
+              "device": "cuda:0",
+              "analysis_status": "completed"
+            }
+          ],
+          "cache_hit": false,
+          "elapsed_s": 1.7113786917179823,
+          "derived_images": [
+            "grounding_095d5f2a.png"
+          ]
+        }
+      ],
+      "decision": {
+        "answer": "B",
+        "reason": "The chest X-ray shows blunting of the left costophrenic angle and basal opacity on the patient's left side, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:16:57.843287+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 4,
+        "tool_calls": 2,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:ceafca93, text:e251e005, text:ab8ebe36, text:98c5f95b, text:ad10c2cf",
+        "prediction_saved_at": "2026-11-27T10:16:57.843287+00:00",
+        "feedback_released_at": "2026-11-27T10:16:57.845061+00:00",
+        "utc": "2026-11-27T10:17:02.695500+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "original",
+      "ordinal": 55,
+      "supplied": [
+        "original"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 460,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have succeeded by systematically comparing both sides of the image for asymmetric opacity or volume-loss signs before matching to an option. One approach that worked involved anchoring the choice to a specific visual feature on the affected side rather than guessing.",
+        "utc": "2026-11-27T09:45:37.464607+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"B\",\"reason\":\"The left costophrenic angle is blunted with a small left-sided opacity, consistent with a small left pleural effusion.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T09:45:37.468635+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "B",
+        "reason": "The left costophrenic angle is blunted with a small left-sided opacity, consistent with a small left pleural effusion.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T09:45:38.618147+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "B",
+        "correct": true,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Ingested 10 items: text:d6b867ee, text:7fd2aeaa, text:2ae8a9af, text:4eda4e73, text:670a433a",
+        "prediction_saved_at": "2026-11-27T09:45:38.618147+00:00",
+        "feedback_released_at": "2026-11-27T09:45:38.619394+00:00",
+        "utc": "2026-11-27T09:45:43.340487+00:00"
+      }
+    },
+    {
+      "batch": "imt58",
+      "model": "deepseek",
+      "condition": "box",
+      "ordinal": 55,
+      "supplied": [
+        "original",
+        "imt"
+      ],
+      "memory_before": {
+        "items": 1,
+        "memory_chars": 479,
+        "injected": "Retrieved prior-case memory for method guidance. Historical answers, findings, and side labels apply to their source cases. Verify the current image independently.\n[Context Note] Similar tasks have benefited from systematically comparing both sides and using anatomical landmarks to confirm laterality before committing to a lateralized finding. One approach that worked before was explicitly noting which side appeared abnormal versus normal, which helped avoid reversal errors.",
+        "utc": "2026-11-27T10:06:06.156131+00:00"
+      },
+      "turns": [
+        {
+          "step_index": 0,
+          "response": "{\"answer\":\"A\",\"reason\":\"Blunting of the right costophrenic angle with a small meniscus is consistent with a small right pleural effusion, while the left costophrenic angle appears sharper.\"}",
+          "skill_activation": {
+            "ids": [],
+            "reason": "no_candidates"
+          },
+          "utc": "2026-11-27T10:06:06.159565+00:00"
+        }
+      ],
+      "tool_events": [],
+      "decision": {
+        "answer": "A",
+        "reason": "Blunting of the right costophrenic angle with a small meniscus is consistent with a small right pleural effusion, while the left costophrenic angle appears sharper.",
+        "status": "completed",
+        "prediction_saved_at": "2026-11-27T10:06:07.276161+00:00",
+        "same_image_ids": []
+      },
+      "score": {
+        "choice": "A",
+        "correct": false,
+        "main_calls": 1,
+        "tool_calls": 0,
+        "failed_tool_calls": 0
+      },
+      "memory_after": {
+        "accepted": true,
+        "native_description": "Skipped: only successful tasks are ingested",
+        "prediction_saved_at": "2026-11-27T10:06:07.276161+00:00",
+        "feedback_released_at": "2026-11-27T10:06:07.277166+00:00",
+        "utc": "2026-11-27T10:06:07.278644+00:00"
+      }
+    }
+  ],
+  "question": "Which finding is in this chest X-ray?",
+  "options": {
+    "A": "small right pleural effusion",
+    "B": "small left pleural effusion"
+  },
+  "reference": "B"
+}
